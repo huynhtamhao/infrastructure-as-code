@@ -1,6 +1,6 @@
 # Install vitualbox
 sudo apt update
-sudo apt install virtualbox
+sudo apt install -y virtualbox
 
 
 # Install Vagrant
@@ -12,10 +12,10 @@ vagrant box add ubuntu/bionic64
 # Install teraform
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install terraform
+sudo apt-get update && sudo apt-get install -y terraform
 
 # Install ansible
-sudo apt install ansible
+sudo apt install -y ansible
 
 # Install kubernates
 sudo apt-get update && sudo apt-get install -y apt-transport-https gnupg2 curl
