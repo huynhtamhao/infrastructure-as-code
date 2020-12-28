@@ -3,7 +3,7 @@
 sudo apt install -y neofetch
 
 # Install neo vim
-sudo apt install neovim
+sudo apt install -y neovim
 # Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
 
@@ -11,7 +11,7 @@ curl -sLf https://spacevim.org/install.sh | bash
 # Install Paparius Icon
 sudo add-apt-repository ppa:papirus/papirus
 sudo apt update
-sudo apt install papirus-icon-theme
+sudo apt install -y papirus-icon-theme
 
 
 # Install Tweak Tool
