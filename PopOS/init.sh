@@ -1,39 +1,56 @@
 # update and upgrade
 # sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+echo "================================================== INSTALL COMMON =================================================="
 sudo apt install -y neofetch
+sudo apt install gparted
+sudo apt-get --purge remove libreoffice*
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt-get install ibus-bamboo
+ibus restart
+
 
 # Install neo vim
+echo "================================================== INSTALL NEOVIM =================================================="
 sudo apt install -y neovim
 # Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
 
 
 # Install Paparius Icon
-sudo add-apt-repository ppa:papirus/papirus
+echo "================================================== INSTALL PAPARIUS ICON =================================================="
+sudo add-apt-repository -y ppa:papirus/papirus
 sudo apt update
 sudo apt install -y papirus-icon-theme
 
 
 # Install Tweak Tool
-sudo add-apt-repository universe
+echo "================================================== INSTALL NEOFETCH =================================================="
+sudo add-apt-repository -y universe
 sudo apt update
 sudo apt install -y gnome-tweak-tool
 
 
 # Install Snap
+echo "================================================== INSTALL SNAP =================================================="
 sudo apt update
 sudo apt install -y snapd
+echo "================================================== INSTALL POSTMAN =================================================="
 sudo snap install postman
+echo "================================================== INSTALL MOOKOON =================================================="
 sudo snap install mockoon
+echo "================================================== INSTALL REMINA =================================================="
 sudo snap install remmina
+echo "================================================== INSTALL TELEGRAM =================================================="
 sudo snap install telegram-desktop
 
 
 # Install Git Kraken
+echo "================================================== INSTALL GITKRAKEN =================================================="
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 
 # Install docker
+echo "================================================== INSTALL DOCKER =================================================="
 sudo apt update
 sudo apt-get install -y \
     apt-transport-https \
@@ -45,7 +62,7 @@ sudo apt-get install -y \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 
-sudo add-apt-repository \
+sudo add-apt-repository -y \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
@@ -54,16 +71,19 @@ sudo add-apt-repository \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
+echo "================================================== INSTALL DOCKER-COMPOSE =================================================="
 # Docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 
+echo "================================================== INSTALL DOCKSTATION =================================================="
 # Install Dockstation
 wget https://github.com/DockStation/dockstation/releases/download/v1.5.1/dockstation_1.5.1_amd64.deb
 sudo dpkg -i dockstation*.deb
 
 
+echo "================================================== INSTALL VS CODE =================================================="
 # Install visual Studio Code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -73,6 +93,7 @@ sudo apt update
 sudo apt install -y code # or code-insiders
 
 
+echo "================================================== INSTALL JAVA =================================================="
 # Install Java
 # Create folder JDK
 sudo mkdir /usr/lib/jvm
@@ -80,7 +101,7 @@ sudo mkdir /usr/lib/jvm
 wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u275-b01/OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz
 sudo tar -xvzf ./OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz && sudo mv jdk8u275-b01 /usr/lib/jvm/openjdk-8
 wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9.1+1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
-sudo tar -xvzf ./OpenJDK10U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && mv jdk-11.0.9.1+1 ~/usr/lib/jvm/openjdk-11
+sudo tar -xvzf ./OpenJDK10U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
 
-
+# INstall tool for dev OPS
 sudo sh ./devops.sh
