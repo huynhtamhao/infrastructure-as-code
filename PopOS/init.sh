@@ -4,6 +4,7 @@ echo "================================================== INSTALL COMMON ========
 sudo apt install -y neofetch
 sudo apt install -y gparted
 sudo apt-get --purge remove -y libreoffice*
+sudo apt autoremove
 sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
 sudo apt-get install -y ibus-bamboo
 ibus restart
@@ -13,11 +14,6 @@ echo "================================================== INSTALL FISH SHELL ====
 sudo apt-add-repository -y ppa:fish-shell/release-3
 sudo apt-get update
 sudo apt-get install -y fish
-
-curl -fsSL https://starship.rs/install.sh | bash
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-
-
 
 # Install neo vim
 echo "================================================== INSTALL NEOVIM =================================================="
@@ -59,7 +55,7 @@ echo "================================================== INSTALL GITKRAKEN =====
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 
-# Install docker
+# Install docker (Lasted Version)
 echo "================================================== INSTALL DOCKER =================================================="
 sudo apt update
 sudo apt-get install -y \
@@ -86,7 +82,6 @@ echo "================================================== INSTALL DOCKER-COMPOSE 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-sudo adduser dockstation
 sudo usermod -aG docker hao
 
 
@@ -119,8 +114,12 @@ sudo tar -xvzf ./OpenJDK10U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv j
 # INstall tool for dev OPS
 sudo sh ./devops.sh
 
-sudo sh copy-config.sh
+sudo sh ./copy-config.sh
+
+curl -fsSL https://starship.rs/install.sh | bash
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 chsh -s `which fish`
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 
 reboot
