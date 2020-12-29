@@ -1,6 +1,6 @@
+echo "============================= INSTALL COMMON ============================="
 # update and upgrade
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove
-echo "================================================== INSTALL COMMON =================================================="
 sudo apt install -y neofetch
 sudo apt install -y gparted
 sudo apt-get --purge remove -y libreoffice*
@@ -10,53 +10,53 @@ sudo apt-get install -y ibus-bamboo
 ibus restart
 
 
-echo "================================================== INSTALL FISH SHELL =================================================="
+echo "============================= INSTALL FISH SHELL =========================="
 sudo apt-add-repository -y ppa:fish-shell/release-3
 sudo apt-get update
 sudo apt-get install -y fish
 
+echo "============================= INSTALL NEOVIM ============================="
 # Install neo vim
-echo "================================================== INSTALL NEOVIM =================================================="
 sudo apt install -y neovim
 # Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
 
 
+echo "============================= INSTALL PAPARIUS ICON ============================="
 # Install Paparius Icon
-echo "================================================== INSTALL PAPARIUS ICON =================================================="
 sudo add-apt-repository -y ppa:papirus/papirus
 sudo apt update
 sudo apt install -y papirus-icon-theme
 
 
+echo "============================= INSTALL TWEAK ============================="
 # Install Tweak Tool
-echo "================================================== INSTALL TWEAK =================================================="
 sudo add-apt-repository -y universe
 sudo apt update
 sudo apt install -y gnome-tweak-tool
 
 
+echo "============================= INSTALL SNAP ============================="
 # Install Snap
-echo "================================================== INSTALL SNAP =================================================="
 sudo apt update
 sudo apt install -y snapd
-echo "================================================== INSTALL POSTMAN =================================================="
+echo "============================= INSTALL POSTMAN ============================="
 sudo snap install postman
-echo "================================================== INSTALL MOOKOON =================================================="
+echo "============================= INSTALL MOOKOON ============================="
 sudo snap install mockoon
-echo "================================================== INSTALL REMINA =================================================="
+echo "============================= INSTALL REMINA ============================="
 sudo snap install remmina
-echo "================================================== INSTALL TELEGRAM =================================================="
+echo "============================= INSTALL TELEGRAM ============================="
 sudo snap install telegram-desktop
 
 
+echo "============================= INSTALL GITKRAKEN ============================="
 # Install Git Kraken
-echo "================================================== INSTALL GITKRAKEN =================================================="
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 
+echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
-echo "================================================== INSTALL DOCKER =================================================="
 sudo apt update
 sudo apt-get install -y \
     apt-transport-https \
@@ -77,7 +77,7 @@ sudo add-apt-repository -y \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-echo "================================================== INSTALL DOCKER-COMPOSE =================================================="
+echo "============================= INSTALL DOCKER-COMPOSE ============================="
 # Docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -85,13 +85,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo usermod -aG docker hao
 
 
-echo "================================================== INSTALL DOCKSTATION =================================================="
+echo "============================= INSTALL DOCKSTATION ============================="
 # Install Dockstation
 wget https://github.com/DockStation/dockstation/releases/download/v1.5.1/dockstation_1.5.1_amd64.deb
 sudo dpkg -i dockstation*.deb
 
 
-echo "================================================== INSTALL VS CODE =================================================="
+echo "============================= INSTALL VS CODE ============================="
 # Install visual Studio Code
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -100,8 +100,10 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install -y code # or code-insiders
 
+sh vscode-config.sh
 
-echo "================================================== INSTALL JAVA =================================================="
+
+echo "============================= INSTALL JAVA ============================="
 # Install Java
 # Create folder JDK
 sudo mkdir /usr/lib/jvm
@@ -122,7 +124,3 @@ fisher install danhper/fish-ssh-agent
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 reboot
-
-# RUN BY HAND
-nvim # After VIM INIT RUN THIS COMMAND
-sh ./copy-config.sh

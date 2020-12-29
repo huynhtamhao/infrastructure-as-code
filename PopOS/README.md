@@ -1,0 +1,3 @@
+# README
+
+[POP-OS-INSTALLATION-GUIDE](https://www.notion.so/huynhtamhao/POP-OS-INSTALLATION-GUIDE-bde39e5fd6184937bd91348e59aa2b6b)
