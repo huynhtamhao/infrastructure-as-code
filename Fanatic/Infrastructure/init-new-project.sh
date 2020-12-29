@@ -1,4 +1,5 @@
 create_bk_logs_directory_be(){
+    mkdir -p backend/$1
     mkdir backend/$1/backup
     mkdir backend/$1/logs
     touch backend/$1/backup/.keep
@@ -13,6 +14,7 @@ sudo docker-compose start"
 }
 
 create_bk_logs_directory_fe(){
+    mkdir -p frontend/$1
     mkdir frontend/$1/backup
     touch frontend/$1/backup/.keep
     cp nginx.conf frontend/$1/
