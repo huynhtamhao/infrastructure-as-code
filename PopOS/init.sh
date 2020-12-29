@@ -1,11 +1,11 @@
 # update and upgrade
-# sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 echo "================================================== INSTALL COMMON =================================================="
 sudo apt install -y neofetch
-sudo apt install gparted
-sudo apt-get --purge remove libreoffice*
-sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
-sudo apt-get install ibus-bamboo
+sudo apt install -y gparted
+sudo apt-get --purge remove -y libreoffice*
+sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
+sudo apt-get install -y ibus-bamboo
 ibus restart
 
 
@@ -13,7 +13,6 @@ echo "================================================== INSTALL FISH SHELL ====
 sudo apt-add-repository -y ppa:fish-shell/release-3
 sudo apt-get update
 sudo apt-get install -y fish
-chsh -s `which fish`
 
 curl -fsSL https://starship.rs/install.sh | bash
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
@@ -121,3 +120,7 @@ sudo tar -xvzf ./OpenJDK10U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv j
 sudo sh ./devops.sh
 
 sudo sh copy-config.sh
+
+chsh -s `which fish`
+
+reboot
