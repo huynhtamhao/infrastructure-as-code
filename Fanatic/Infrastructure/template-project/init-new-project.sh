@@ -1,29 +1,32 @@
-create_bk_logs_directory_be(){
-    mkdir -p backend/$1
-    mkdir backend/$1/backup
-    mkdir backend/$1/logs
-    touch backend/$1/backup/.keep
+CONFIG_URI="http\/\/\:192.168.210.201\:8888"
 
-    echo -n > backend/$1/before-deploy.sh "#!/bin/bash
+create_bk_logs_directory_be(){
+    mkdir -p ../backend/$1
+    mkdir ../backend/$1/backup
+    mkdir ../backend/$1/logs
+    touch ../backend/$1/backup/.keep
+
+    echo -n > ../backend/$1/before-deploy.sh "#!/bin/bash
 sudo docker-compose stop
 sudo mv *.jar backup/\$(date +%Y-%m-%d-%H-%M-%S).jar"
 
-    echo -n > backend/$1/deploy.sh "#!/bin/bash
+    echo -n > ../backend/$1/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 
+    sed "s/\$CONFIG_URI/$CONFIG_URI/" ./backend/bootstrap.yml > bootstrap-changed.yml && mv bootstrap-changed.yml ../backend/$1/bootstrap.yml
 }
 
 create_bk_logs_directory_fe(){
-    mkdir -p frontend/$1
-    mkdir frontend/$1/backup
-    touch frontend/$1/backup/.keep
-    cp nginx.conf frontend/$1/
+    mkdir -p ../frontend/$1
+    mkdir ../frontend/$1/backup
+    touch ../frontend/$1/backup/.keep
+    cp nginx.conf ../frontend/$1/
 
-    echo -n > frontend/$1/before-deploy.sh "#!/bin/bash
+    echo -n > ../frontend/$1/before-deploy.sh "#!/bin/bash
 sudo docker-compose stop
 sudo mv dist backup/dist_$(date +%Y-%m-%d-%H-%M-%S)"
 
-    echo -n > frontend/$1/deploy.sh "#!/bin/bash
+    echo -n > ../frontend/$1/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 }
 
