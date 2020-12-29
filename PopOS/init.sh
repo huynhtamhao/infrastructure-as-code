@@ -9,6 +9,17 @@ sudo apt-get install ibus-bamboo
 ibus restart
 
 
+echo "================================================== INSTALL FISH SHELL =================================================="
+sudo apt-add-repository -y ppa:fish-shell/release-3
+sudo apt-get update
+sudo apt-get install -y fish
+chsh -s `which fish`
+
+curl -fsSL https://starship.rs/install.sh | bash
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+
+
 # Install neo vim
 echo "================================================== INSTALL NEOVIM =================================================="
 sudo apt install -y neovim
@@ -24,7 +35,7 @@ sudo apt install -y papirus-icon-theme
 
 
 # Install Tweak Tool
-echo "================================================== INSTALL NEOFETCH =================================================="
+echo "================================================== INSTALL TWEAK =================================================="
 sudo add-apt-repository -y universe
 sudo apt update
 sudo apt install -y gnome-tweak-tool
@@ -76,6 +87,9 @@ echo "================================================== INSTALL DOCKER-COMPOSE 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
+sudo adduser dockstation
+sudo usermod -aG docker hao
+
 
 echo "================================================== INSTALL DOCKSTATION =================================================="
 # Install Dockstation
@@ -105,3 +119,5 @@ sudo tar -xvzf ./OpenJDK10U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv j
 
 # INstall tool for dev OPS
 sudo sh ./devops.sh
+
+sudo sh copy-config.sh
