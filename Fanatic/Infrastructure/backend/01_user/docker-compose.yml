@@ -8,4 +8,3 @@ services:
     network_mode: "host"
     volumes:
       - .:/usr/src/app
-      - ../config.yml:/usr/src/app

@@ -3,7 +3,7 @@ spring:
     active: default
   cloud:
     config:
-      uri: '${URI}:8888/'
+      uri: 'http://192.168.210.201:8888/'
       name: usermanagement,common
 
 logging:
