@@ -1,0 +1,4 @@
+fanatic:
+  deployment-environment:
+    uri: http://192.168.210.201
+    host: 192.168.210.201
