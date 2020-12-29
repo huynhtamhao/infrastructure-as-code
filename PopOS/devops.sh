@@ -1,14 +1,13 @@
 # Install vitualbox
 sudo apt update
 echo "================================================== INSTALL VIRTUAL BOX================================================"
-sudo apt install -y virtualbox
-
+wget https://download.virtualbox.org/virtualbox/6.1.16/virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb
+sudo dpkg -i virtualbox*.deb
 
 # Install Vagrant
 echo "================================================== INSTALL VAGRANT =================================================="
 wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
 sudo dpkg -i vagrant_2.2.14_x86_64.deb
-vagrant box add ubuntu/bionic64
 
 
 echo "================================================== INSTALL TERRAFORM =================================================="
@@ -40,3 +39,5 @@ sudo dpkg -i minikube_latest_amd64.deb
 
 echo "================================================== INSTALL LENS =================================================="
 sudo snap install kontena-lens --classic
+
+vagrant box add ubuntu/bionic64

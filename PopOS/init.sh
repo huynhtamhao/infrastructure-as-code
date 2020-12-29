@@ -4,7 +4,7 @@ echo "================================================== INSTALL COMMON ========
 sudo apt install -y neofetch
 sudo apt install -y gparted
 sudo apt-get --purge remove -y libreoffice*
-sudo apt autoremove
+sudo apt autoremove -y
 sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
 sudo apt-get install -y ibus-bamboo
 ibus restart
@@ -82,7 +82,7 @@ echo "================================================== INSTALL DOCKER-COMPOSE 
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
-sudo usermod -aG docker hao
+sudo usermod -aG docker posos
 
 
 echo "================================================== INSTALL DOCKSTATION =================================================="
@@ -112,14 +112,17 @@ wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11
 sudo tar -xvzf ./OpenJDK10U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
 
 # INstall tool for dev OPS
-sudo sh ./devops.sh
+sh ./devops.sh
 
-sudo sh ./copy-config.sh
-
-curl -fsSL https://starship.rs/install.sh | bash
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-
+curl -fsSL https://starship.rs/install.sh | bash
 chsh -s `which fish`
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+fisher install danhper/fish-ssh-agent
 
+
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 reboot
+
+# RUN BY HAND
+nvim # After VIM INIT RUN THIS COMMAND
+sh ./copy-config.sh
