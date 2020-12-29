@@ -32,15 +32,17 @@ create_bk_logs_directory(){
 echo $1
 echo $2
 
-if ["$2" = "backend"]; then
+if \[ "$2" = "backend" ]; then
     echo "Create new project just for BackEnd"
     create_bk_logs_directory_be $1
-elif ["$2" = "frontend"]; then
+elif \[ "$2" = "frontend" ]; then
     echo "Create new project just for FrontEnd"
     create_bk_logs_directory_fe $1
-else
+elif \[ "$2" = "all" ]; then
     echo "Create new project for both BackEnd and FrontEnd"
     create_bk_logs_directory $1
+else
+    echo "Please input 'backend', 'frontend', 'all' for creating project."
 fi
 
 # create_bk_logs_directory 01_user
