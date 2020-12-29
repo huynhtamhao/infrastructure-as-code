@@ -1,3 +1,4 @@
+#!/bin/sh
 # Install JetbrainsMono Font for Visual Code
 wget https://download.jetbrains.com/fonts/JetBrainsMono-2.221.zip
 sudo apt update

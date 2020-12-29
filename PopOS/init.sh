@@ -1,6 +1,8 @@
-echo "============================= INSTALL COMMON ============================="
+#!/bin/sh
 # update and upgrade
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+
+echo "============================= INSTALL COMMON ============================="
 sudo apt install -y neofetch
 sudo apt install -y gparted
 sudo apt-get --purge remove -y libreoffice*

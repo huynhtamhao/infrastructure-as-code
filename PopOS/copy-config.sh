@@ -1,3 +1,4 @@
+#!/bin/sh
 sudo cp ./SpaceVim/init.toml ~/.SpaceVim.d/
 
 sudo cp ./Fish/config.fish ~/.config/fish/

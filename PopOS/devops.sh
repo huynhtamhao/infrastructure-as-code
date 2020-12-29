@@ -1,3 +1,4 @@
+#!/bin/sh
 # Install vitualbox
 sudo apt update
 echo "============================= INSTALL VIRTUAL BOX================================================"
