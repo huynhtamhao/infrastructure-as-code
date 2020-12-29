@@ -1,9 +1,8 @@
-create_bk_logs_directory(){
+create_bk_logs_directory_be(){
     mkdir backend/$1/backup
     mkdir backend/$1/logs
     touch backend/$1/backup/.keep
 
-    # touch backend/$1/before.sh
     echo -n > backend/$1/before-deploy.sh "#!/bin/bash
 sudo docker-compose stop
 sudo mv *.jar backup/\$(date +%Y-%m-%d-%H-%M-%S).jar"
@@ -11,6 +10,21 @@ sudo mv *.jar backup/\$(date +%Y-%m-%d-%H-%M-%S).jar"
     echo -n > backend/$1/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 
+}
+
+create_bk_logs_directory(){
+    create_bk_logs_directory_be $1
+
+    mkdir frontend/$1/backup
+    touch frontend/$1/backup/.keep
+    cp nginx.conf frontend/$1/
+
+    echo -n > frontend/$1/before-deploy.sh "#!/bin/bash
+sudo docker-compose stop
+sudo mv dist backup/dist_$(date +%Y-%m-%d-%H-%M-%S)"
+
+    echo -n > frontend/$1/deploy.sh "#!/bin/bash
+sudo docker-compose start"
 }
 
 create_bk_logs_directory 01_user
