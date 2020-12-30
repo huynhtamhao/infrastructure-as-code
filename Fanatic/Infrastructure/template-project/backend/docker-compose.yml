@@ -1,10 +1,10 @@
 version: "3"
 services:
   app:
-    container_name: $CONTAINER_NAME
+    container_name: $BE_CONTAINER_NAME
     build: .
     ports:
-      - $SYSTEM_PORT:$SYSTEM_PORT
+      - $BE_SYSTEM_PORT:$BE_SYSTEM_PORT
     network_mode: "host"
     volumes:
       - .:/usr/src/app

@@ -1,6 +1,7 @@
 PROJECT_DIRECTORY=$1
-FE_BE_ALL=$2
-ENVIRONMENT=$3
+SERVER_URL=$2
+
+. ./config/$PROJECT_DIRECTORY.config
 
 create_bk_logs_directory_be(){
     mkdir -p ../backend/$PROJECT_DIRECTORY
@@ -15,7 +16,7 @@ sudo mv *.jar backup/\$(date +%Y-%m-%d-%H-%M-%S).jar"
     echo -n > ../backend/$PROJECT_DIRECTORY/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 
-    sh init-be.sh $PROJECT_DIRECTORY $ENVIRONMENT
+    sh init-be.sh $PROJECT_DIRECTORY $SERVER_URL
 }
 
 create_bk_logs_directory_fe(){

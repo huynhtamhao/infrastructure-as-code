@@ -1,9 +1,9 @@
 version: "3"
 services:
   static-web:
-    container_name: $CONTAINER_NAME
+    container_name: $FE_CONTAINER_NAME
     build: .
     ports:
-      - $SYSTEM_PORT:80
+      - $FE_SYSTEM_PORT:80
     volumes:
-      - ./dist/$SYSTEM_NAME/:/usr/share/nginx/html
+      - ./dist/$FE_SYSTEM_NAME/:/usr/share/nginx/html

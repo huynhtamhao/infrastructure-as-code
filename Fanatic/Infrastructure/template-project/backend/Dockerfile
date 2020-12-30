@@ -1,10 +1,10 @@
 FROM openjdk:8-jdk-alpine
 COPY . /usr/src/app
 VOLUME /usr/src/app
-EXPOSE $SYSTEM_PORT
+EXPOSE $BE_SYSTEM_PORT
 
 WORKDIR /usr/src/app
 
 ENTRYPOINT ["/usr/bin/java"]
 
-CMD ["-jar", "-Dspring.profiles.active=prod", "-Dspring.config.location=/usr/src/app/", "/usr/src/app/$SYSTEM_NAME.jar"]
+CMD ["-jar", "-Dspring.profiles.active=prod", "-Dspring.config.location=/usr/src/app/", "/usr/src/app/$BE_SYSTEM_NAME.jar"]
