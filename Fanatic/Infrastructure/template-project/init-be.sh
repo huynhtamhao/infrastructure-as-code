@@ -101,11 +101,11 @@ echo "Create Bootstrap Susccess"
 sed -e "s/\$SYSTEM_PORT/$SYSTEM_PORT/" \
     -e "s/\$SYSTEM_NAME/$SYSTEM_NAME/" \
     Dockerfile > Dockerfile-changed
-mv Dockerfile-changed ../../backend/$PROJECT_DIRECTORY/Dockerfile
+mv Dockerfile-changed ../backend/$PROJECT_DIRECTORY/Dockerfile
 echo "Create Dockerfile Susccess"
 
 sed -e "s/\$SYSTEM_PORT/$SYSTEM_PORT/" \
     -e "s/\$CONTAINER_NAME/$CONTAINER_NAME/" \
     docker-compose.yml > docker-compose-changed.yml
-mv docker-compose-changed.yml ../../backend/$PROJECT_DIRECTORY/docker-compose.yml
+mv docker-compose-changed.yml ../backend/$PROJECT_DIRECTORY/docker-compose.yml
 echo "Create Docker Compose Susccess"

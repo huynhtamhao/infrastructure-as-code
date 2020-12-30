@@ -15,7 +15,7 @@ sudo mv *.jar backup/\$(date +%Y-%m-%d-%H-%M-%S).jar"
     echo -n > ../backend/$PROJECT_DIRECTORY/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 
-    sh ./backend/init-bootstrap-docker.sh $PROJECT_DIRECTORY $ENVIRONMENT
+    sh init-be.sh $PROJECT_DIRECTORY $ENVIRONMENT
 }
 
 create_bk_logs_directory_fe(){
