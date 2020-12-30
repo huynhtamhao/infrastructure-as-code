@@ -2,44 +2,44 @@ PROJECT_DIRECTORY=$1
 
 if \[ "$PROJECT_DIRECTORY" = "01_user" ]; then
     # config for Docker
-    BE_SYSTEM_PORT="8082"
-    BE_SYSTEM_NAME="usermanagement"
-    BE_CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4200"
+    SYSTEM_NAME="UserManagement"
+    CONTAINER_NAME="fe_user"
 elif \[ "$PROJECT_DIRECTORY" = "02_material" ]; then
     # config for Docker
-    SYSTEM_PORT="8082"
-    SYSTEM_NAME="usermanagement"
-    CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4201"
+    SYSTEM_NAME="MaterialManagement"
+    CONTAINER_NAME="fe_material"
 elif \[ "$PROJECT_DIRECTORY" = "03_product" ]; then
     # config for Docker
-    SYSTEM_PORT="8082"
-    SYSTEM_NAME="usermanagement"
-    CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4202"
+    SYSTEM_NAME="ProductionControl"
+    CONTAINER_NAME="fe_product"
 elif \[ "$PROJECT_DIRECTORY" = "04_procurement" ]; then
     # config for Docker
-    SYSTEM_PORT="8082"
-    SYSTEM_NAME="usermanagement"
-    CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4203"
+    SYSTEM_NAME="ProcurementManagement"
+    CONTAINER_NAME="fe_procurement"
 elif \[ "$PROJECT_DIRECTORY" = "05_maintenance" ]; then
     # config for Docker
-    SYSTEM_PORT="8082"
-    SYSTEM_NAME="usermanagement"
-    CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4204"
+    SYSTEM_NAME="MaintenanceService"
+    CONTAINER_NAME="fe_maintenance"
 elif \[ "$PROJECT_DIRECTORY" = "06_productdata" ]; then
     # config for Docker
-    SYSTEM_PORT="8082"
-    SYSTEM_NAME="usermanagement"
-    CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4205"
+    SYSTEM_NAME="ProductDataManagement"
+    CONTAINER_NAME="fe_productdata"
 elif \[ "$PROJECT_DIRECTORY" = "07_datawarehouse" ]; then
     # config for Docker
-    SYSTEM_PORT="8082"
-    SYSTEM_NAME="usermanagement"
-    CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4206"
+    SYSTEM_NAME="DataWarehouse"
+    CONTAINER_NAME="fe_datawarehouse"
 elif \[ "$PROJECT_DIRECTORY" = "master" ]; then
     # config for Docker
-    SYSTEM_PORT="8082"
-    SYSTEM_NAME="usermanagement"
-    CONTAINER_NAME="be_user"
+    SYSTEM_PORT="4205"
+    SYSTEM_NAME="MasterManagement"
+    CONTAINER_NAME="fe_master"
 else
     echo "Do Not Create"
     return

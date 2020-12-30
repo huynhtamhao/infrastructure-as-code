@@ -31,7 +31,7 @@ sudo mv dist backup/dist_\$(date +%Y-%m-%d-%H-%M-%S)"
     echo -n > ../frontend/$PROJECT_DIRECTORY/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 
-    sh init-fe.sh $PROJECT_DIRECTORY $ENVIRONMENT
+    sh init-fe.sh $PROJECT_DIRECTORY
 }
 
 create_bk_logs_directory(){
