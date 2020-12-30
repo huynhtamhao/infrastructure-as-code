@@ -89,7 +89,7 @@ fi
 
 echo "Project: $PROJECT_DIRECTORY and server environment: $2"
 
-sed -e "s/\$SERVER_URL/$SERVER_URL/" \
+sed -e "s/\$SERVER_URL/$SERVER_URL/g" \
     -e "s/\$CONFIG_PORT/$CONFIG_PORT/" \
     -e "s/\$PROJECT_CONFIG_FILE/$PROJECT_CONFIG_FILE/" \
     -e "s/\$LOGSTASH_PORT/$LOGSTASH_PORT/" \

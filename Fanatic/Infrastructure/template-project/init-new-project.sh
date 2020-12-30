@@ -26,7 +26,7 @@ create_bk_logs_directory_fe(){
 
     echo -n > ../frontend/$PROJECT_DIRECTORY/before-deploy.sh "#!/bin/bash
 sudo docker-compose stop
-sudo mv dist backup/dist_$(date +%Y-%m-%d-%H-%M-%S)"
+sudo mv dist backup/dist_\$(date +%Y-%m-%d-%H-%M-%S)"
 
     echo -n > ../frontend/$PROJECT_DIRECTORY/deploy.sh "#!/bin/bash
 sudo docker-compose start"
