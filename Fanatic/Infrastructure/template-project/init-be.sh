@@ -94,18 +94,18 @@ sed -e "s/\$SERVER_URL/$SERVER_URL/" \
     -e "s/\$PROJECT_CONFIG_FILE/$PROJECT_CONFIG_FILE/" \
     -e "s/\$LOGSTASH_PORT/$LOGSTASH_PORT/" \
     -e "s/\$LOGSTASH_APPNAME/$LOGSTASH_APPNAME/" \
-    bootstrap.yml > bootstrap-changed.yml
-mv bootstrap-changed.yml ../../backend/$PROJECT_DIRECTORY/bootstrap.yml
+    backend/bootstrap.yml > bootstrap-changed.yml
+mv bootstrap-changed.yml ../backend/$PROJECT_DIRECTORY/bootstrap.yml
 echo "Create Bootstrap Susccess"
 
 sed -e "s/\$SYSTEM_PORT/$SYSTEM_PORT/" \
     -e "s/\$SYSTEM_NAME/$SYSTEM_NAME/" \
-    Dockerfile > Dockerfile-changed
+    backend/Dockerfile > Dockerfile-changed
 mv Dockerfile-changed ../backend/$PROJECT_DIRECTORY/Dockerfile
 echo "Create Dockerfile Susccess"
 
 sed -e "s/\$SYSTEM_PORT/$SYSTEM_PORT/" \
     -e "s/\$CONTAINER_NAME/$CONTAINER_NAME/" \
-    docker-compose.yml > docker-compose-changed.yml
+    backend/docker-compose.yml > docker-compose-changed.yml
 mv docker-compose-changed.yml ../backend/$PROJECT_DIRECTORY/docker-compose.yml
 echo "Create Docker Compose Susccess"
