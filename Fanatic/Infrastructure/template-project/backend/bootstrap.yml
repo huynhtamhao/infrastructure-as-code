@@ -3,11 +3,11 @@ spring:
     active: default
   cloud:
     config:
-      uri: $CONFIG_URI
-#       name: ${PROJECT_CONFIG_FILE},common
+      uri: http://$SERVER_URL:$CONFIG_PORT
+      name: $PROJECT_CONFIG_FILE,common
 
-# logging:
-#   path: logs
-#   logstash:
-#     host: ${LOGSTASH_HOST}
-#     appname: ${LOGSTASH_APPNAME}
+logging:
+  path: logs
+  logstash:
+    host: $SERVER_URL:$LOGSTASH_PORT
+    appname: $LOGSTASH_APPNAME

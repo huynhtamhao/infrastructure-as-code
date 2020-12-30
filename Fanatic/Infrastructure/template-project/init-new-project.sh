@@ -1,65 +1,52 @@
-CONFIG_URI="http\/\/\:192.168.210.201\:8888"
+PROJECT_DIRECTORY=$1
+FE_BE_ALL=$2
+ENVIRONMENT=$3
 
 create_bk_logs_directory_be(){
-    mkdir -p ../backend/$1
-    mkdir ../backend/$1/backup
-    mkdir ../backend/$1/logs
-    touch ../backend/$1/backup/.keep
+    mkdir -p ../backend/$PROJECT_DIRECTORY
+    mkdir ../backend/$PROJECT_DIRECTORY/backup
+    mkdir ../backend/$PROJECT_DIRECTORY/logs
+    touch ../backend/$PROJECT_DIRECTORY/backup/.keep
 
-    echo -n > ../backend/$1/before-deploy.sh "#!/bin/bash
+    echo -n > ../backend/$PROJECT_DIRECTORY/before-deploy.sh "#!/bin/bash
 sudo docker-compose stop
 sudo mv *.jar backup/\$(date +%Y-%m-%d-%H-%M-%S).jar"
 
-    echo -n > ../backend/$1/deploy.sh "#!/bin/bash
+    echo -n > ../backend/$PROJECT_DIRECTORY/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 
-    sed "s/\$CONFIG_URI/$CONFIG_URI/" ./backend/bootstrap.yml > bootstrap-changed.yml && mv bootstrap-changed.yml ../backend/$1/bootstrap.yml
+    sh ./backend/init-bootstrap-docker.sh $PROJECT_DIRECTORY $ENVIRONMENT
 }
 
 create_bk_logs_directory_fe(){
-    mkdir -p ../frontend/$1
-    mkdir ../frontend/$1/backup
-    touch ../frontend/$1/backup/.keep
-    cp nginx.conf ../frontend/$1/
+    mkdir -p ../frontend/$PROJECT_DIRECTORY
+    mkdir ../frontend/$PROJECT_DIRECTORY/backup
+    touch ../frontend/$PROJECT_DIRECTORY/backup/.keep
+    cp nginx.conf ../frontend/$PROJECT_DIRECTORY/
 
-    echo -n > ../frontend/$1/before-deploy.sh "#!/bin/bash
+    echo -n > ../frontend/$PROJECT_DIRECTORY/before-deploy.sh "#!/bin/bash
 sudo docker-compose stop
 sudo mv dist backup/dist_$(date +%Y-%m-%d-%H-%M-%S)"
 
-    echo -n > ../frontend/$1/deploy.sh "#!/bin/bash
+    echo -n > ../frontend/$PROJECT_DIRECTORY/deploy.sh "#!/bin/bash
 sudo docker-compose start"
 }
 
 create_bk_logs_directory(){
-    create_bk_logs_directory_be $1
-    create_bk_logs_directory_fe $1
+    create_bk_logs_directory_be $PROJECT_DIRECTORY
+    create_bk_logs_directory_fe $PROJECT_DIRECTORY
 }
-echo $1
-echo $2
 
-if \[ "$2" = "backend" ]; then
+if \[ "$FE_BE_ALL" = "backend" ]; then
     echo "Create new project just for BackEnd"
-    create_bk_logs_directory_be $1
-elif \[ "$2" = "frontend" ]; then
+    create_bk_logs_directory_be $PROJECT_DIRECTORY
+elif \[ "$FE_BE_ALL" = "frontend" ]; then
     echo "Create new project just for FrontEnd"
-    create_bk_logs_directory_fe $1
-elif \[ "$2" = "all" ]; then
+    create_bk_logs_directory_fe $PROJECT_DIRECTORY
+elif \[ "$FE_BE_ALL" = "all" ]; then
     echo "Create new project for both BackEnd and FrontEnd"
-    create_bk_logs_directory $1
+    create_bk_logs_directory $PROJECT_DIRECTORY
 else
     echo "Please input 'backend', 'frontend', 'all' for creating project."
+    return
 fi
-
-# create_bk_logs_directory 01_user
-# create_bk_logs_directory 02_material
-# create_bk_logs_directory 03_product
-# create_bk_logs_directory 04_procurement
-# create_bk_logs_directory 05_maintenance
-# create_bk_logs_directory 06_productdata
-# create_bk_logs_directory 07_datawarehouse
-# create_bk_logs_directory admin
-# create_bk_logs_directory config
-# create_bk_logs_directory discovery
-# create_bk_logs_directory fanaman
-# create_bk_logs_directory gateway
-# create_bk_logs_directory master
