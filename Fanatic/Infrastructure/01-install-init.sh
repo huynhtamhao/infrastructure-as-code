@@ -2,6 +2,8 @@
 # update and upgrade
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 
+sudo apt-get install -y unzip
+
 echo "============================= INSTALL NEOVIM ============================="
 # Install neo vim
 sudo apt install -y neovim
