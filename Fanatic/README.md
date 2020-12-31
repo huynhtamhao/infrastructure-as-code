@@ -13,12 +13,12 @@ ulimit -u 4096
 sudo docker build . --tag fanatic-elk
 sudo docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -it --name fanatic-elk fanatic-elk
 
-echo "============================= INSTALL SWAGGER EDITOR ============================="
+# Install Swagger Editor
 docker pull swaggerapi/swagger-editor
 sudo docker pull swaggerapi/swagger-editor
 sudo docker run -d -p 18082:8080 swaggerapi/swagger-editor
 
-echo "============================= INSTALL PORTAINER ============================="
+# Install Portainer
 sudo docker run -d -p 19093:9000 -p 18083:8000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 ```
 
