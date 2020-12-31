@@ -38,7 +38,7 @@ sudo docker network prune
 
 - Chia structure thành:
 
-  - Cấu hình máy: Resource như thề nào, CPU, Harkdisk, RAM
+  - Cấu hình máy: Resource như thề nào, CPU, Hard Disk, RAM
   - Cấu hình [terraform provider cho KVM](https://dev.to/ruanbekker/terraform-with-kvm-2d9e)
   - Cấu hình sẵn cho cloud (để dành dự định cho tương lai)
 

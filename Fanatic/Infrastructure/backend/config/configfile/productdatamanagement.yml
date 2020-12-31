@@ -1,0 +1,17 @@
+server:
+  port: 8087 # Project's Config
+
+spring:
+  application:
+    name: pdm # Project's Config
+  datasource:
+    url: jdbc:postgresql://192.168.210.201:5432/PRODUCT_DATA_MANAGEMENT # Project's Config
+    username: postgres # Project's Config
+    password: Fanatic01 # Project's Config
+
+# Configuring info endpoint
+info.app.name: Product Data System # Project's Config
+info.app.description: 設計管理スシステム # Project's Config
+
+# project's properties common
+fanatic.application.name.jp: 設計管理 # Project's Config

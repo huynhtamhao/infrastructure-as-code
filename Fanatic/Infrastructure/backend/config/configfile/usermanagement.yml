@@ -1,0 +1,22 @@
+server:
+  port: 8082
+  servlet:
+    session:
+      tracking-modes: cookie
+
+# Spring config
+spring:
+  application:
+    name: ump
+  datasource:
+    url: jdbc:postgresql://192.168.210.201:5432/USER_MANAGEMENT
+    username: postgres
+    password: Fanatic01
+
+# Configuring info endpoint
+info.app.name: User Management System #Project's Config
+info.app.description: ユーザー管理スシステム #Project's Config
+
+# project's properties
+fanatic:
+  application.name.jp: ユーザー管理

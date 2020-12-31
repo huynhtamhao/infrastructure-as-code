@@ -1,0 +1,9 @@
+version: "3"
+services:
+  static-web:
+    container_name: "fe_menu"
+    build: .
+    ports:
+      - 4299:80
+    volumes:
+      - ./dist/Fanatic-Menu/:/usr/share/nginx/html

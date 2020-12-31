@@ -1,0 +1,25 @@
+server:
+  port: 8250  # Project's Config
+# Spring config
+spring:
+  application:
+    name: mtm  # Project's Config
+  datasource:
+    url: jdbc:postgresql://192.168.210.201:5432/MATERIAL_MANAGEMENT  # Project's Config
+    username: postgres  # Project's Config
+    password: Fanatic01  # Project's Config
+
+app:
+  pcs:
+    datasource:
+      url: jdbc:postgresql://192.168.210.201:5432/PRODUCT_CONTROL  # Project's Config
+      username: postgres  # Project's Config
+      password: Fanatic01  # Project's Config
+
+# Configuring info endpoint
+info.app.name: Master Management System
+info.app.description: マスターシステム
+
+# project's properties
+fanatic:
+  application.name.jp: マスター

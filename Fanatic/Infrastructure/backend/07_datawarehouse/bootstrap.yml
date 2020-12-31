@@ -1,0 +1,14 @@
+spring:
+  profiles:
+    active: default
+  cloud:
+    config:
+      uri: http://192.168.210.201:8888/
+      name: datawarehouse,common
+
+logging:
+  path: logs
+  logstash:
+    host: 192.168.210.201:5044
+    appname: データウェアハウス
+

@@ -1,0 +1,9 @@
+version: "3"
+services:
+  static-web:
+    container_name: "fe_procurement"
+    build: .
+    ports:
+      - 4203:80
+    volumes:
+      - ./dist/ProcurementManagement/:/usr/share/nginx/html

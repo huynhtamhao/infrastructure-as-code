@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    container_name: "be_maintenance"
+    build: .
+    ports:
+      - 8086:8086
+    network_mode: "host"
+    volumes:
+      - .:/usr/src/app

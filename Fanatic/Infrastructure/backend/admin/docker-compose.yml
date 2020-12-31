@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    container_name: "be_admin"
+    build: .
+    ports:
+      - 8090:8090
+    network_mode: "host"
+    volumes:
+      - .:/usr/src/app

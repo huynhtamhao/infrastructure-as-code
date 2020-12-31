@@ -1,0 +1,9 @@
+version: "3"
+services:
+  static-web:
+    container_name: "fe_master"
+    build: .
+    ports:
+      - 4250:80
+    volumes:
+      - ./dist/MasterManagement/:/usr/share/nginx/html

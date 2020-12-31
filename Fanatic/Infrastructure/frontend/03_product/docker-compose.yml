@@ -1,0 +1,9 @@
+version: "3"
+services:
+  static-web:
+    container_name: "fe_product"
+    build: .
+    ports:
+      - 4202:80
+    volumes:
+      - ./dist/ProductionControl/:/usr/share/nginx/html

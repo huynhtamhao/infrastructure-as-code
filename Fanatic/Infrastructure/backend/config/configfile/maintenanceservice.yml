@@ -1,0 +1,24 @@
+server:
+  port: 8086
+
+spring:
+  application:
+    name: mss
+  datasource:
+    url: jdbc:postgresql://192.168.210.201:5432/MAINTENANCE_SERVICE
+    username: postgres
+    password: Fanatic01
+
+## Configuring info endpoint
+info.app.name: Maintenance Service System
+info.app.description: 保守サービスシステム
+
+# project's properties
+fanatic.application.name.jp: 保守サービス
+
+# config schedule of project using cron
+schedule:
+  maintenance-contract:
+    update-defective-quantity: 0 0 1 * * ?     # 0 0 1 * * * : “At 01:00.”
+  repair-product-info:
+    update-status-onsite: 0 0 1 * * ?    # 0 0 1 * * * : “At 01:00.”

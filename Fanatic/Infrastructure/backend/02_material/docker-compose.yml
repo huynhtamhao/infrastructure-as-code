@@ -1,0 +1,10 @@
+version: "3"
+services:
+  app:
+    container_name: "be_material"
+    build: .
+    ports:
+      - 8083:8083
+    network_mode: "host"
+    volumes:
+      - .:/usr/src/app

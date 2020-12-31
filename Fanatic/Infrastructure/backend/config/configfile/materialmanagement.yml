@@ -1,0 +1,31 @@
+server:
+  port: 8083
+
+# Spring config
+spring:
+  application:
+    name: mmsys
+  datasource:
+    url: jdbc:postgresql://192.168.210.201:5432/MATERIAL_MANAGEMENT
+    username: postgres
+    password: Fanatic01
+
+# Configuring info endpoint
+info.app.name: Material Management System
+info.app.description: 材料管理スシステム
+
+# project's properties
+fanatic:
+  application.name.jp: 材料管理
+
+# config schedule of project using cron
+schedule:
+  inventory:
+    update-stock-quantity: 0 */5 * ? * *
+  inventory-history:
+    update-data-by-month: 1 0 0 1 * ?   # At 00:00:01am, on the 1st day, every month
+    update-data-by-day:  0 4/5 * ? * *  # Every 5 minute(s) starting at minute 4
+  individual-cost-list:
+    update-data: 0 */5 * ? * *
+  individual-cost-list-history:
+    update-data-by-month: 1 0 0 5 * ?   # At 00:00:05am, on the 1st day, every month

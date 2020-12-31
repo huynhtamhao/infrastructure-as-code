@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: gateway
+  datasource:
+    url: jdbc:postgresql://192.168.210.201:5432/USER_MANAGEMENT
+    username: postgres
+    password: Fanatic01
+
+fanatic:
+  application.name.jp: ゲートウェイ

@@ -1,0 +1,12 @@
+server:
+  port: 8889
+
+eureka:
+  client:
+    #eureka.client.registerWithEureka and eureka.client.fetchRegistry are set to false
+    #because we want to prevent this Spring Boot application to register itself
+    #with discovery service since this application is itself a discovery service.
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8889/eureka

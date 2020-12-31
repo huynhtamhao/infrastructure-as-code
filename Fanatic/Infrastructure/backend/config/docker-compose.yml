@@ -1,0 +1,9 @@
+version: "3"
+services:
+  app:
+    container_name: "be_config"
+    build: .
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/usr/src/app

@@ -1,0 +1,9 @@
+version: "3"
+services:
+  static-web:
+    container_name: "fe_productdata"
+    build: .
+    ports:
+      - 4205:80
+    volumes:
+      - ./dist/ProductDataManagement/:/usr/share/nginx/html
