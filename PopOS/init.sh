@@ -1,16 +1,30 @@
 #!/bin/sh
 # update and upgrade
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 echo "============================= INSTALL COMMON ============================="
+sudo apt-get --purge remove -y libreoffice*
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
 sudo apt install -y neofetch
 sudo apt install -y gparted
-sudo apt-get --purge remove -y libreoffice*
-sudo apt autoremove -y
+echo "============================= INSTALL IBUS =========================="
 sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
 sudo apt-get install -y ibus-bamboo
 ibus restart
 
+
+echo "============================= INSTALL DISCORD =========================="
+https://discord.com/api/download?platform=linux&format=deb
+sudo dpkg -i discord*.deb
+
+
+echo "============================= INSTALL BRAVE BROWSER =========================="
+sudo apt install apt-transport-https curl gnupg
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo apt update
+sudo apt install brave-browser
 
 echo "============================= INSTALL FISH SHELL =========================="
 sudo apt-add-repository -y ppa:fish-shell/release-3
