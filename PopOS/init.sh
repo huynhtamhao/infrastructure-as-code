@@ -8,6 +8,7 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 sudo apt install -y neofetch
 sudo apt install -y gparted
+sudo apt install unzip
 echo "============================= INSTALL IBUS =========================="
 sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
 sudo apt-get install -y ibus-bamboo
@@ -15,7 +16,7 @@ ibus restart
 
 
 echo "============================= INSTALL DISCORD =========================="
-https://discord.com/api/download?platform=linux&format=deb
+wget https://discord.com/api/download?platform=linux&format=deb
 sudo dpkg -i discord*.deb
 
 
