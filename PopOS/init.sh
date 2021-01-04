@@ -17,9 +17,9 @@ sudo apt-get install -y ibus-bamboo
 ibus restart
 
 
-echo "============================= INSTALL DISCORD =========================="
-wget https://discord.com/api/download?platform=linux&format=deb
-sudo dpkg -i discord*.deb
+# echo "============================= INSTALL DISCORD =========================="
+# wget https://discord.com/api/download?platform=linux&format=deb
+# sudo dpkg -i discord*.deb
 
 
 echo "============================= INSTALL BRAVE BROWSER =========================="
@@ -142,6 +142,8 @@ chsh -s `which fish`
 fisher install danhper/fish-ssh-agent
 
 # Install marktext, etcher, kdiff
+ sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 reboot
