@@ -1,6 +1,8 @@
 delete_bk_logs_directory_be(){
-    find ./backend/$1/backup/ ! -name '.keep' -mtime +10 -type f -delete
+    # find ./backend/$1/backup/ ! -name '.keep' -mtime +10 -type f -delete
+    ls -t | grep '.jar' | tail -n +4 | xargs rm -f --
     find ./backend/$1/logs/ -name '*.log' -mtime +1 -type f -delete
+    find ./backend/$1/logs/ -name '*.gz' -mtime +10 -type f -delete
 }
 
 delete_bk_logs_directory_fe(){
