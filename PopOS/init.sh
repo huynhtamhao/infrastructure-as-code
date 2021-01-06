@@ -9,15 +9,17 @@ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 sudo apt install -y neofetch
 sudo apt install -y gparted
 sudo apt install unzip
+
+
 echo "============================= INSTALL IBUS =========================="
 sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
 sudo apt-get install -y ibus-bamboo
 ibus restart
 
 
-echo "============================= INSTALL DISCORD =========================="
-wget https://discord.com/api/download?platform=linux&format=deb
-sudo dpkg -i discord*.deb
+# echo "============================= INSTALL DISCORD =========================="
+# wget https://discord.com/api/download?platform=linux&format=deb
+# sudo dpkg -i discord*.deb
 
 
 echo "============================= INSTALL BRAVE BROWSER =========================="
@@ -65,7 +67,8 @@ echo "============================= INSTALL REMINA =============================
 sudo snap install remmina
 echo "============================= INSTALL TELEGRAM ============================="
 sudo snap install telegram-desktop
-
+echo "============================= INSTALL TELEGRAM ============================="
+sudo snap install beekeeper-studio
 
 echo "============================= INSTALL GITKRAKEN ============================="
 # Install Git Kraken
@@ -137,6 +140,9 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 curl -fsSL https://starship.rs/install.sh | bash
 chsh -s `which fish`
 fisher install danhper/fish-ssh-agent
+
+# Install marktext, etcher, kdiff
+ sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 
 
 sudo apt update && sudo apt upgrade -y && sudo apt autoremove

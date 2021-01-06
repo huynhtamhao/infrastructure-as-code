@@ -1,10 +1,14 @@
 delete_bk_logs_directory_be(){
-    find ./backend/$1/backup/ ! -name '.keep' -mtime +10 -type f -delete
-    find ./backend/$1/logs/ -name '*.log' -mtime +1 -type f -delete
+    # find ./backend/$1/backup/ ! -name '.keep' -mtime +10 -type f -delete
+    sudo find ./backend/$1/logs/ -name '*.log' -mtime +0 -type f -delete
+    sudo find ./backend/$1/logs/ -name '*.gz' -mtime +5 -type f -delete
+    cd ./backend/$1/backup/
+    ls -t | grep '.jar' | tail -n +4 | xargs rm -f --
+    cd ~
 }
 
 delete_bk_logs_directory_fe(){
-    find ./frontend/$1/backup/ ! -name '.keep' -mtime +10 -type d | xargs rm -rf
+    sudo find ./frontend/$1/backup/ ! -name '.keep' -mtime +10 -type d | xargs rm -rf
 }
 
 delete_bk_logs_directory(){
@@ -17,6 +21,7 @@ delete_bk_logs_directory_be admin
 delete_bk_logs_directory_be config
 delete_bk_logs_directory_be discovery
 delete_bk_logs_directory_be fanaman
+delete_bk_logs_directory_be gateway
 
 # Menu
 #find ./frontend/menu/backup/ -mtime +10 -type d | xargs rm -rf
