@@ -23,6 +23,7 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
+    project_rooter_outermost = false
 
 # Enable autocomplete layer
 [[layers]]
@@ -41,4 +42,26 @@ default_height = 30
 [[layers]]
   name = "sudo"
 
+[[layers]]
+  name = "tmux"
+
 guifont = "JetBrains Mono:h12"
+
+[[layers]]
+    name = "denite"
+
+[[layers]]
+    name = 'git'
+[[layers]]
+    name = 'VersionControl'
+
+# Config for Javascript
+[[layers]]
+  name = "lang#javascript"
+
+# Config for Typescript
+[[layers]]
+  name = "lang#typescript"
+
+[[layers]]
+  name = "lang#java"
