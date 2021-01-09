@@ -11,7 +11,7 @@ services:
         max-size: "100m"
     volumes:
       - ./config.jar:/usr/src/app/config.jar
-      - ./configfile:/usr/src/app/configfile
+      - ./configfile:/usr/src/app/configfile/
       - ./bootstrap.yml:/usr/src/app/bootstrap.yml
       - ./application.yml:/usr/src/app/application.yml
       - ./logs:/usr/src/app/logs/
