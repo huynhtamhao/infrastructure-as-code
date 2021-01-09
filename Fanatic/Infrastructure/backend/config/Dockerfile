@@ -1,9 +1,9 @@
 FROM openjdk:8-jdk-alpine
 
-COPY ./bootstrap.yml /usr/src/app
-COPY ./application.yml /usr/src/app
-COPY ./config.jar /usr/src/app
-COPY ./configfile /usr/src/app
+COPY ./bootstrap.yml /usr/src/app/
+COPY ./application.yml /usr/src/app/
+COPY ./config.jar /usr/src/app/
+COPY ./configfile /usr/src/app/
 
 VOLUME /usr/src/app
 

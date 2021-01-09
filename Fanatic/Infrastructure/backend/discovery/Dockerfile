@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
 
-COPY ./application.yml /usr/src/app
-COPY ./discovery.jar /usr/src/app
+COPY ./application.yml /usr/src/app/
+COPY ./discovery.jar /usr/src/app/
 
 VOLUME /usr/src/app
 

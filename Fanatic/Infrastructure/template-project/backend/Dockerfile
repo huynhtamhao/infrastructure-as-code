@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk-alpine
 
-COPY ./bootstrap.yml /usr/src/app
-COPY ./$BE_SYSTEM_NAME.jar /usr/src/app
+COPY ./bootstrap.yml /usr/src/app/
+COPY ./$BE_SYSTEM_NAME.jar /usr/src/app/
 
 VOLUME /usr/src/app
 
