@@ -10,4 +10,6 @@ services:
       options:
         max-size: "100m"
     volumes:
-      - .:/usr/src/app
+      - ./discovery.jar:/usr/src/app/discovery.jar
+      - ./bootstrap.yml:/usr/src/app/bootstrap.yml
+      - ./logs:/usr/src/app/logs/
