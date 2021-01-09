@@ -5,5 +5,9 @@ services:
     build: .
     ports:
       - 8888:8888
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
     volumes:
       - .:/usr/src/app
