@@ -24,6 +24,7 @@ echo "Create Dockerfile Susccess"
 
 sed -e "s/\$BE_SYSTEM_PORT/$BE_SYSTEM_PORT/g" \
     -e "s/\$BE_CONTAINER_NAME/$BE_CONTAINER_NAME/" \
+    -e "s/\$BE_SYSTEM_NAME/$BE_SYSTEM_NAME/" \
     backend/docker-compose.yml > docker-compose-changed.yml
 mv docker-compose-changed.yml ../backend/$PROJECT_DIRECTORY/docker-compose.yml
 echo "Create Docker Compose Susccess"
