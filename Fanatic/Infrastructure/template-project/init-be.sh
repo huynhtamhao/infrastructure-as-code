@@ -17,7 +17,7 @@ mv bootstrap-changed.yml ../backend/$PROJECT_DIRECTORY/bootstrap.yml
 echo "Create Bootstrap Susccess"
 
 sed -e "s/\$BE_SYSTEM_PORT/$BE_SYSTEM_PORT/" \
-    -e "s/\$BE_SYSTEM_NAME/$BE_SYSTEM_NAME/" \
+    -e "s/\$BE_SYSTEM_NAME/$BE_SYSTEM_NAME/g" \
     backend/Dockerfile > Dockerfile-changed
 mv Dockerfile-changed ../backend/$PROJECT_DIRECTORY/Dockerfile
 echo "Create Dockerfile Susccess"
