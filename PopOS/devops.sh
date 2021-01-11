@@ -2,26 +2,19 @@
 # Install vitualbox
 sudo apt update
 echo "============================= INSTALL VIRTUAL BOX================================================"
-wget https://download.virtualbox.org/virtualbox/6.1.16/virtualbox-6.1_6.1.16-140961~Ubuntu~eoan_amd64.deb
-sudo dpkg -i virtualbox*.deb
+sudo apt-get install virtualbox
+sudo apt-get install virtualbox—ext–pack
+
 
 # Install Vagrant
 echo "============================= INSTALL VAGRANT ============================="
 wget https://releases.hashicorp.com/vagrant/2.2.14/vagrant_2.2.14_x86_64.deb
 sudo dpkg -i vagrant_2.2.14_x86_64.deb
-
-
-echo "============================= INSTALL TERRAFORM ============================="
-# Install teraform
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install -y terraform
-
+vagrant box add ubuntu/bionic64
 
 echo "============================= INSTALL ANSIBLE ============================="
 # Install ansible
 sudo apt install -y ansible
-
 
 echo "============================= INSTALL KUBENATES ============================="
 # Install kubernates
@@ -41,4 +34,9 @@ sudo dpkg -i minikube_latest_amd64.deb
 echo "============================= INSTALL LENS ============================="
 sudo snap install kontena-lens --classic
 
-vagrant box add ubuntu/bionic64
+
+echo "============================= INSTALL TERRAFORM ============================="
+# Install teraform
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository -y "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install -y terraform

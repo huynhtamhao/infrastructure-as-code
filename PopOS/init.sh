@@ -23,11 +23,11 @@ ibus restart
 
 
 echo "============================= INSTALL BRAVE BROWSER =========================="
-sudo apt install apt-transport-https curl gnupg
+sudo apt install -y apt-transport-https curl gnupg
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt install brave-browser
+sudo apt install -y brave-browser
 
 echo "============================= INSTALL FISH SHELL =========================="
 sudo apt-add-repository -y ppa:fish-shell/release-3
@@ -54,6 +54,7 @@ sudo add-apt-repository -y universe
 sudo apt update
 sudo apt install -y gnome-tweak-tool
 
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 echo "============================= INSTALL SNAP ============================="
 # Install Snap
@@ -74,6 +75,8 @@ echo "============================= INSTALL GITKRAKEN ==========================
 # Install Git Kraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
+
+sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
 
 echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
@@ -105,11 +108,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo usermod -aG docker hao
 
 
-echo "============================= INSTALL DOCKSTATION ============================="
-# Install Dockstation
-wget https://github.com/DockStation/dockstation/releases/download/v1.5.1/dockstation_1.5.1_amd64.deb
-sudo dpkg -i dockstation*.deb
-
 
 echo "============================= INSTALL VS CODE ============================="
 # Install visual Studio Code
@@ -120,7 +118,7 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install -y code # or code-insiders
 
-sh vscode-config.sh
+sh font-config.sh
 
 
 echo "============================= INSTALL JAVA ============================="
