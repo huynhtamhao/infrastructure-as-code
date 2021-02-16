@@ -1,6 +1,10 @@
 FROM openjdk:8-jdk-alpine
-COPY . /usr/src/app
+
+COPY ./bootstrap.yml /usr/src/app/
+COPY ./gateway.jar /usr/src/app/
+
 VOLUME /usr/src/app
+
 EXPOSE 8080
 
 WORKDIR /usr/src/app

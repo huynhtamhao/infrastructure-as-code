@@ -1,9 +1,0 @@
-version: "3"
-services:
-  static-web:
-    container_name: "fe_datawarehouse"
-    build: .
-    ports:
-      - 4206:80
-    volumes:
-      - ./dist/DataWarehouse/:/usr/share/nginx/html

@@ -1,7 +1,7 @@
 PROJECT_DIRECTORY=$1
 BE_SERVER_URL=$2
 BE_CONFIG_PORT="8888"
-BE_LOGSTASH_PORT="5401"
+BE_LOGSTASH_PORT="5044"
 
 echo $PROJECT_DIRECTORY
 
@@ -17,13 +17,14 @@ mv bootstrap-changed.yml ../backend/$PROJECT_DIRECTORY/bootstrap.yml
 echo "Create Bootstrap Susccess"
 
 sed -e "s/\$BE_SYSTEM_PORT/$BE_SYSTEM_PORT/" \
-    -e "s/\$BE_SYSTEM_NAME/$BE_SYSTEM_NAME/" \
+    -e "s/\$BE_SYSTEM_NAME/$BE_SYSTEM_NAME/g" \
     backend/Dockerfile > Dockerfile-changed
 mv Dockerfile-changed ../backend/$PROJECT_DIRECTORY/Dockerfile
 echo "Create Dockerfile Susccess"
 
 sed -e "s/\$BE_SYSTEM_PORT/$BE_SYSTEM_PORT/g" \
     -e "s/\$BE_CONTAINER_NAME/$BE_CONTAINER_NAME/" \
+    -e "s/\$BE_SYSTEM_NAME/$BE_SYSTEM_NAME/g" \
     backend/docker-compose.yml > docker-compose-changed.yml
 mv docker-compose-changed.yml ../backend/$PROJECT_DIRECTORY/docker-compose.yml
 echo "Create Docker Compose Susccess"

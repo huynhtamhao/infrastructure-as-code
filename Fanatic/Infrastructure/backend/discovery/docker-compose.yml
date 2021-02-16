@@ -5,5 +5,11 @@ services:
     build: .
     ports:
       - 8889:8889
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
     volumes:
-      - .:/usr/src/app
+      - ./discovery.jar:/usr/src/app/discovery.jar
+      - ./application.yml:/usr/src/app/application.yml
+      - ./logs:/usr/src/app/logs/

@@ -1,9 +1,0 @@
-version: "3"
-services:
-  static-web:
-    container_name: "fe_material"
-    build: .
-    ports:
-      - 4201:80
-    volumes:
-      - ./dist/MaterialManagement/:/usr/share/nginx/html

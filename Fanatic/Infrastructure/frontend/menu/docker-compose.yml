@@ -5,5 +5,9 @@ services:
     build: .
     ports:
       - 4299:80
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
     volumes:
       - ./dist/Fanatic-Menu/:/usr/share/nginx/html

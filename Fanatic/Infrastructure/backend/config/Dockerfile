@@ -1,6 +1,12 @@
 FROM openjdk:8-jdk-alpine
-COPY . /usr/src/app
+
+COPY ./bootstrap.yml /usr/src/app/
+COPY ./application.yml /usr/src/app/
+COPY ./config.jar /usr/src/app/
+COPY ./configfile/* /usr/src/app/configfile/
+
 VOLUME /usr/src/app
+
 EXPOSE 8888
 
 WORKDIR /usr/src/app

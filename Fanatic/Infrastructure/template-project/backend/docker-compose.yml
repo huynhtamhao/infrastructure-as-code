@@ -6,5 +6,11 @@ services:
     ports:
       - $BE_SYSTEM_PORT:$BE_SYSTEM_PORT
     network_mode: "host"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
     volumes:
-      - .:/usr/src/app
+      - ./$BE_SYSTEM_NAME.jar:/usr/src/app/$BE_SYSTEM_NAME.jar
+      - ./bootstrap.yml:/usr/src/app/bootstrap.yml
+      - ./logs:/usr/src/app/logs/

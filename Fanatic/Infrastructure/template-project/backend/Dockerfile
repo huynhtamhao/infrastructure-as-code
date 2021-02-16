@@ -1,6 +1,12 @@
 FROM openjdk:8-jdk-alpine
-COPY . /usr/src/app
+
+COPY ./bootstrap.yml /usr/src/app/
+COPY ./$BE_SYSTEM_NAME.jar /usr/src/app/
+
+RUN apk --update add fontconfig ttf-dejavu
+
 VOLUME /usr/src/app
+
 EXPOSE $BE_SYSTEM_PORT
 
 WORKDIR /usr/src/app
