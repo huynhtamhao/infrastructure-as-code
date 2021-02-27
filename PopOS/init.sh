@@ -1,14 +1,21 @@
 #!/bin/sh
 # update and upgrade
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
 echo "============================= INSTALL COMMON ============================="
 sudo apt-get --purge remove -y libreoffice*
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
 sudo apt install -y neofetch
 sudo apt install -y gparted
-sudo apt install unzip
+sudo apt install -y unzip
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
 
 echo "============================= INSTALL IBUS =========================="
@@ -31,8 +38,10 @@ sudo apt install -y brave-browser
 
 echo "============================= INSTALL FISH SHELL =========================="
 sudo apt-add-repository -y ppa:fish-shell/release-3
-sudo apt-get update
-sudo apt-get install -y fish
+sudo apt update
+sudo apt install -y fish
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
 echo "============================= INSTALL NEOVIM ============================="
 # Install neo vim
@@ -47,6 +56,10 @@ sudo add-apt-repository -y ppa:papirus/papirus
 sudo apt update
 sudo apt install -y papirus-icon-theme
 
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
+
 
 echo "============================= INSTALL TWEAK ============================="
 # Install Tweak Tool
@@ -54,7 +67,9 @@ sudo add-apt-repository -y universe
 sudo apt update
 sudo apt install -y gnome-tweak-tool
 
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
 echo "============================= INSTALL SNAP ============================="
 # Install Snap
@@ -71,12 +86,12 @@ sudo snap install telegram-desktop
 echo "============================= INSTALL TELEGRAM ============================="
 sudo snap install beekeeper-studio
 
-echo "============================= INSTALL GITKRAKEN ============================="
+# echo "============================= INSTALL GITKRAKEN ============================="
 # Install Git Kraken
-wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-sudo dpkg -i gitkraken-amd64.deb
+# wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+# sudo dpkg -i gitkraken-amd64.deb
 
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+
 
 echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
@@ -107,7 +122,9 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 sudo usermod -aG docker hao
 
-
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
 echo "============================= INSTALL VS CODE ============================="
 # Install visual Studio Code
@@ -119,6 +136,10 @@ sudo apt update
 sudo apt install -y code # or code-insiders
 
 sh font-config.sh
+
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
 
 echo "============================= INSTALL JAVA ============================="
@@ -139,9 +160,13 @@ curl -fsSL https://starship.rs/install.sh | bash
 chsh -s `which fish`
 fisher install danhper/fish-ssh-agent
 
+fisher install jorgebucaran/nvm.fish
+nvm install lts
+
+
 # Install marktext, etcher, kdiff
- sudo apt update && sudo apt upgrade -y && sudo apt autoremove
+sudo apt update 
+sudo apt upgrade -y 
+sudo apt autoremove -y
 
-
-sudo apt update && sudo apt upgrade -y && sudo apt autoremove
 reboot
