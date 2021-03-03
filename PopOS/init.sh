@@ -1,20 +1,32 @@
 #!/bin/sh
 # update and upgrade
-sudo apt update 
-sudo apt upgrade -y 
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 echo "============================= INSTALL COMMON ============================="
 sudo apt-get --purge remove -y libreoffice*
-sudo apt update 
-sudo apt upgrade -y 
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 sudo apt install -y neofetch
 sudo apt install -y gparted
-sudo apt install -y unzip
-sudo apt update 
-sudo apt upgrade -y 
+sudo apt install -y
+
+echo "============================== INTALL RUST CARGO ======================="
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+echo "============================== INTALL BREW ======================="
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
+
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 
@@ -24,9 +36,9 @@ sudo apt-get install -y ibus-bamboo
 ibus restart
 
 
-# echo "============================= INSTALL DISCORD =========================="
-# wget https://discord.com/api/download?platform=linux&format=deb
-# sudo dpkg -i discord*.deb
+echo "============================= INSTALL DISCORD =========================="
+wget wget -O discord-0.0.1.deb https://discord.com/api/download?platform=linux&format=deb
+sudo dpkg -i discord-0.0.1.deb
 
 
 echo "============================= INSTALL BRAVE BROWSER =========================="
@@ -40,15 +52,16 @@ echo "============================= INSTALL FISH SHELL =========================
 sudo apt-add-repository -y ppa:fish-shell/release-3
 sudo apt update
 sudo apt install -y fish
-sudo apt upgrade -y 
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 echo "============================= INSTALL NEOVIM ============================="
 # Install neo vim
 sudo apt install -y neovim
+
+echo "============================= INSTALL SPACEVIM ============================="
 # Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
-
 
 echo "============================= INSTALL PAPARIUS ICON ============================="
 # Install Paparius Icon
@@ -56,8 +69,8 @@ sudo add-apt-repository -y ppa:papirus/papirus
 sudo apt update
 sudo apt install -y papirus-icon-theme
 
-sudo apt update 
-sudo apt upgrade -y 
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 
@@ -67,8 +80,8 @@ sudo add-apt-repository -y universe
 sudo apt update
 sudo apt install -y gnome-tweak-tool
 
-sudo apt update 
-sudo apt upgrade -y 
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 echo "============================= INSTALL SNAP ============================="
@@ -83,15 +96,17 @@ echo "============================= INSTALL REMINA =============================
 sudo snap install remmina
 echo "============================= INSTALL TELEGRAM ============================="
 sudo snap install telegram-desktop
-echo "============================= INSTALL TELEGRAM ============================="
-sudo snap install beekeeper-studio
 
-# echo "============================= INSTALL GITKRAKEN ============================="
+# echo "============================= INSTALL TELEGRAM ============================="
+# sudo snap install beekeeper-studio
+
+echo "============================= INSTALL GITKRAKEN ============================="
 # Install Git Kraken
-# wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-# sudo dpkg -i gitkraken-amd64.deb
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+sudo dpkg -i gitkraken-amd64.deb
 
-
+echo "============================= INSTALL GITUI ============================="
+cargo install gitui
 
 echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
@@ -122,8 +137,8 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 sudo usermod -aG docker hao
 
-sudo apt update 
-sudo apt upgrade -y 
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 echo "============================= INSTALL VS CODE ============================="
@@ -134,11 +149,14 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install -y code # or code-insiders
-
 sh font-config.sh
 
-sudo apt update 
-sudo apt upgrade -y 
+echo "============================= INSTALL NODEJS ============================="
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+nvm install --lts
+
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 
@@ -158,15 +176,16 @@ sh ./devops.sh
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 curl -fsSL https://starship.rs/install.sh | bash
 chsh -s `which fish`
-fisher install danhper/fish-ssh-agent
+# fisher install danhper/fish-ssh-agent
 
-fisher install jorgebucaran/nvm.fish
-nvm install lts
+# fisher install jorgebucaran/nvm.fish
+# nvm install lts
 
+sh ./copy-config.sh
 
 # Install marktext, etcher, kdiff
-sudo apt update 
-sudo apt upgrade -y 
+sudo apt update
+sudo apt upgrade -y
 sudo apt autoremove -y
 
 reboot
