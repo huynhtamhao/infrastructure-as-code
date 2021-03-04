@@ -4,6 +4,16 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
+echo "============================= INSTALL PAPARIUS ICON ============================="
+# Install Paparius Icon
+sudo add-apt-repository -y ppa:papirus/papirus
+sudo apt update
+sudo apt install -y papirus-icon-theme
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
+
 echo "============================= INSTALL COMMON ============================="
 sudo apt-get --purge remove -y libreoffice*
 sudo apt update
@@ -15,9 +25,9 @@ sudo apt update
 
 sudo apt install -y neofetch
 sudo apt install -y gparted
-sudo apt install kdiff3
+sudo apt install -y kdiff3
 sudo apt install -y gnome-tweak-tool
-sudo apt-get install alacarte
+sudo apt install -y alacarte
 
 sudo apt update
 sudo apt upgrade -y
@@ -38,18 +48,6 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt install -y brave-browser
-
-echo "============================= INSTALL PAPARIUS ICON ============================="
-# Install Paparius Icon
-sudo add-apt-repository -y ppa:papirus/papirus
-sudo apt update
-sudo apt install -y papirus-icon-theme
-
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
-
-
 
 
 echo "============================= INSTALL HUGO ============================="

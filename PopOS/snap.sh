@@ -10,5 +10,7 @@ echo "============================= INSTALL REMINA =============================
 sudo snap install remmina
 echo "============================= INSTALL TELEGRAM ============================="
 sudo snap install telegram-desktop
-echo "============================= INSTALL TELEGRAM ============================="
+echo "============================= INSTALL FLAMESHOT ============================="
+sudo snap install flameshot
+echo "============================= INSTALL BEEKEEPER ============================="
 sudo snap install beekeeper-studio
