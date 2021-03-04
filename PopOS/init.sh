@@ -98,20 +98,20 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install -y code # or code-insiders
 
-# Install Snap Tools
-sh ./snap.sh
+sudo flatpak install io.dbeaver.DBeaverCommunity
 
 # Install tool for dev OPS
 sh ./devops.sh
-
 # Install programming environment (Java, NodeJs)
 sh ./environment.sh
-
 # Install Fish Shell
-sh ./ fish.sh
-
+sh ./fish.sh
 # Font Configuration
 sh ./font-config.sh
+# Install Snap Tools
+sh ./snap.sh
+# Install and config VIM
+sh ./vim.sh
 
 # Copy configuration
 sh ./copy-config.sh
@@ -125,9 +125,9 @@ echo "============================= INSTALL GITKRAKEN ==========================
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 
-# echo "============================= INSTALL DISCORD =========================="
-# wget wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
-# sudo dpkg -i discord.deb
+echo "============================= INSTALL DISCORD =========================="
+wget wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
+sudo dpkg -i discord.deb
 
 # Install marktext, etcher, kdiff
 sudo apt update

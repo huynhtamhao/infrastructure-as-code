@@ -5,3 +5,6 @@ sudo apt install -y neovim
 echo "============================= INSTALL SPACEVIM ============================="
 # Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
+
+
+sudo apt-get install exuberant-ctags

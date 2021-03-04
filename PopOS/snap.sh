@@ -12,5 +12,5 @@ echo "============================= INSTALL TELEGRAM ===========================
 sudo snap install telegram-desktop
 echo "============================= INSTALL FLAMESHOT ============================="
 sudo snap install flameshot
-echo "============================= INSTALL BEEKEEPER ============================="
-sudo snap install beekeeper-studio
+echo "============================= INSTALL SLACK ============================="
+sudo snap install slack
