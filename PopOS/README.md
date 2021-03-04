@@ -55,3 +55,5 @@ nvim
 # Run the following command to config VIM and Fish
 sh ./copy-config.sh
 ```
+
+Sử dụng MainMenu để  edit tham chiếu đến /usr/share/icons/Papirus-Dark/96x96/

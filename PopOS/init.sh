@@ -10,15 +10,23 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
+sudo add-apt-repository -y universe
+sudo apt update
+
 sudo apt install -y neofetch
 sudo apt install -y gparted
-sudo apt install -y
+sudo apt install kdiff3
+sudo apt install -y gnome-tweak-tool
+sudo apt-get install alacarte
 
-echo "============================= INSTALL HUGO ============================="
-brew install hugo
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
 
-echo "============================= INSTALL GITUI ============================="
-cargo install gitui
+echo "============================= INSTALL IBUS =========================="
+sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
+sudo apt-get install -y ibus-bamboo
+ibus restart
 
 sudo apt update
 sudo apt upgrade -y
@@ -42,31 +50,13 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 
 
-echo "============================= INSTALL TWEAK ============================="
-# Install Tweak Tool
-sudo add-apt-repository -y universe
-sudo apt update
-sudo apt install -y gnome-tweak-tool
 
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
 
-echo "============================= INSTALL SNAP ============================="
-# Install Snap
-sudo apt update
-sudo apt install -y snapd
-echo "============================= INSTALL POSTMAN ============================="
-sudo snap install postman
-echo "============================= INSTALL MOOKOON ============================="
-sudo snap install mockoon
-echo "============================= INSTALL REMINA ============================="
-sudo snap install remmina
-echo "============================= INSTALL TELEGRAM ============================="
-sudo snap install telegram-desktop
+echo "============================= INSTALL HUGO ============================="
+brew install hugo
 
-# echo "============================= INSTALL TELEGRAM ============================="
-# sudo snap install beekeeper-studio
+echo "============================= INSTALL GITUI ============================="
+cargo install gitui
 
 echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
@@ -109,54 +99,37 @@ sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/trusted.gpg.d/p
 sudo apt install apt-transport-https
 sudo apt update
 sudo apt install -y code # or code-insiders
-sh font-config.sh
 
-echo "============================= INSTALL NODEJS ============================="
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-nvm install --lts
+# Install Snap Tools
+sh ./snap.sh
 
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
+# Install tool for dev OPS
+sh ./devops.sh
 
-
-echo "============================= INSTALL JAVA ============================="
-# Install Java
-# Create folder JDK
-sudo mkdir /usr/lib/jvm
-# Download file
-wget https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u275-b01/OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz
-sudo tar -xvzf ./OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz && sudo mv jdk8u275-b01 /usr/lib/jvm/openjdk-8
-wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9.1+1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
-sudo tar -xvzf ./OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
-
-
-echo "============================= INSTALL IBUS =========================="
-sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
-sudo apt-get install -y ibus-bamboo
-ibus restart
+# Install programming environment (Java, NodeJs)
+sh ./environment.sh
 
 # Install Fish Shell
 sh ./ fish.sh
 
-# INstall tool for dev OPS
-sh ./devops.sh
+# Font Configuration
+sh ./font-config.sh
 
-# Copy config
+# Copy configuration
 sh ./copy-config.sh
 
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-# echo "============================= INSTALL DISCORD =========================="
-# wget wget -O discord-0.0.1.deb https://discord.com/api/download?platform=linux&format=deb
-# sudo dpkg -i discord-0.0.1.deb
-
 echo "============================= INSTALL GITKRAKEN ============================="
 # Install Git Kraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
+
+# echo "============================= INSTALL DISCORD =========================="
+# wget wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
+# sudo dpkg -i discord.deb
 
 # Install marktext, etcher, kdiff
 sudo apt update
