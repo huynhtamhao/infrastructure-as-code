@@ -104,12 +104,12 @@ sudo flatpak install io.dbeaver.DBeaverCommunity
 sh ./devops.sh
 # Install programming environment (Java, NodeJs)
 sh ./environment.sh
-# Install Fish Shell
-sh ./fish.sh
 # Font Configuration
 sh ./font-config.sh
 # Install Snap Tools
 sh ./snap.sh
+# Install Fish Shell
+sh ./terminal.sh
 # Install and config VIM
 sh ./vim.sh
 
