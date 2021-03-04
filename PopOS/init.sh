@@ -14,34 +14,15 @@ sudo apt install -y neofetch
 sudo apt install -y gparted
 sudo apt install -y
 
-# echo "============================== INTALL RUST CARGO ======================="
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+echo "============================= INSTALL HUGO ============================="
+brew install hugo
 
-# echo "============================== INTALL BREW ======================="
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-# test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-# test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-# test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-# echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
-
-# echo "============================= INSTALL HUGO ============================="
-# brew install hugo
-
-
-# echo "============================= INSTALL GITUI ============================="
-# cargo install gitui
-
+echo "============================= INSTALL GITUI ============================="
+cargo install gitui
 
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
-
-
-echo "============================= INSTALL IBUS =========================="
-sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
-sudo apt-get install -y ibus-bamboo
-ibus restart
-
 
 echo "============================= INSTALL BRAVE BROWSER =========================="
 sudo apt install -y apt-transport-https curl gnupg
@@ -49,21 +30,6 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
 sudo apt install -y brave-browser
-
-echo "============================= INSTALL FISH SHELL =========================="
-sudo apt-add-repository -y ppa:fish-shell/release-3
-sudo apt update
-sudo apt install -y fish
-sudo apt upgrade -y
-sudo apt autoremove -y
-
-echo "============================= INSTALL NEOVIM ============================="
-# Install neo vim
-sudo apt install -y neovim
-
-echo "============================= INSTALL SPACEVIM ============================="
-# Install SpaceVim
-curl -sLf https://spacevim.org/install.sh | bash
 
 echo "============================= INSTALL PAPARIUS ICON ============================="
 # Install Paparius Icon
@@ -101,11 +67,6 @@ sudo snap install telegram-desktop
 
 # echo "============================= INSTALL TELEGRAM ============================="
 # sudo snap install beekeeper-studio
-
-echo "============================= INSTALL GITKRAKEN ============================="
-# Install Git Kraken
-wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-sudo dpkg -i gitkraken-amd64.deb
 
 echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
@@ -169,22 +130,33 @@ sudo tar -xvzf ./OpenJDK8U-jdk_x64_linux_hotspot_8u275b01.tar.gz && sudo mv jdk8
 wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9.1+1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
 sudo tar -xvzf ./OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
 
+
+echo "============================= INSTALL IBUS =========================="
+sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
+sudo apt-get install -y ibus-bamboo
+ibus restart
+
+# Install Fish Shell
+sh ./ fish.sh
+
 # INstall tool for dev OPS
 sh ./devops.sh
 
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-curl -fsSL https://starship.rs/install.sh | bash
-chsh -s `which fish`
-# fisher install danhper/fish-ssh-agent
-
-# fisher install jorgebucaran/nvm.fish
-# nvm install lts
-
+# Copy config
 sh ./copy-config.sh
+
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
 
 # echo "============================= INSTALL DISCORD =========================="
 # wget wget -O discord-0.0.1.deb https://discord.com/api/download?platform=linux&format=deb
 # sudo dpkg -i discord-0.0.1.deb
+
+echo "============================= INSTALL GITKRAKEN ============================="
+# Install Git Kraken
+wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
+sudo dpkg -i gitkraken-amd64.deb
 
 # Install marktext, etcher, kdiff
 sudo apt update
