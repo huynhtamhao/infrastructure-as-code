@@ -14,15 +14,22 @@ sudo apt install -y neofetch
 sudo apt install -y gparted
 sudo apt install -y
 
-echo "============================== INTALL RUST CARGO ======================="
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# echo "============================== INTALL RUST CARGO ======================="
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
-echo "============================== INTALL BREW ======================="
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
-test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
-echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+# echo "============================== INTALL BREW ======================="
+# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
+# test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+# test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+# echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+
+# echo "============================= INSTALL HUGO ============================="
+# brew install hugo
+
+
+# echo "============================= INSTALL GITUI ============================="
+# cargo install gitui
 
 
 sudo apt update
@@ -34,11 +41,6 @@ echo "============================= INSTALL IBUS =========================="
 sudo add-apt-repository -y ppa:bamboo-engine/ibus-bamboo
 sudo apt-get install -y ibus-bamboo
 ibus restart
-
-
-echo "============================= INSTALL DISCORD =========================="
-wget wget -O discord-0.0.1.deb https://discord.com/api/download?platform=linux&format=deb
-sudo dpkg -i discord-0.0.1.deb
 
 
 echo "============================= INSTALL BRAVE BROWSER =========================="
@@ -104,9 +106,6 @@ echo "============================= INSTALL GITKRAKEN ==========================
 # Install Git Kraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
-
-echo "============================= INSTALL GITUI ============================="
-cargo install gitui
 
 echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
@@ -182,6 +181,10 @@ chsh -s `which fish`
 # nvm install lts
 
 sh ./copy-config.sh
+
+# echo "============================= INSTALL DISCORD =========================="
+# wget wget -O discord-0.0.1.deb https://discord.com/api/download?platform=linux&format=deb
+# sudo dpkg -i discord-0.0.1.deb
 
 # Install marktext, etcher, kdiff
 sudo apt update
