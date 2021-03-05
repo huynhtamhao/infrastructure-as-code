@@ -1,0 +1,1 @@
+exec /etc/X11/Xsession 'gnome-session --session=pop'
