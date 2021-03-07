@@ -27,3 +27,22 @@ echo "============================= INSTALL SPACEVIM ===========================
 # Install SpaceVim
 curl -sLf https://spacevim.org/install.sh | bash
 sudo apt-get install exuberant-ctags
+
+echo "============================= TERMINAL ARE SEX ============================="
+# Tool download youtube
+pip3 install --user mps-youtube
+# Tool view docker
+npm install -g dockly
+# Tool huong dan coding
+pip install howdoi
+# Tool to mau 7 sac cau vong
+sudo snap install lolcat
+# Like postman
+sudo apt install httpie
+# Huong dan su dung tool
+npm install -g tldr
+# Search google bang comamnd line
+sudo snap install googler
+
+echo "============================= INSTALL GITUI ============================="
+brew install gitui

@@ -20,6 +20,12 @@ test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 ```
 
+**Install pip**
+
+```bash
+sudo apt install python3-pip
+```
+
 **Clone Pop OS's automation installation tools and config**
 
 ```bash
@@ -56,4 +62,4 @@ nvim
 sh ./copy-config.sh
 ```
 
-Sử dụng MainMenu để  edit tham chiếu đến /usr/share/icons/Papirus-Dark/96x96/
+Sử dụng MainMenu để  edit tham chiếu đến /usr/share/icons/Papirus/96x96/

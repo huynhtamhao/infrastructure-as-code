@@ -53,9 +53,6 @@ sudo apt install -y brave-browser
 echo "============================= INSTALL HUGO ============================="
 brew install hugo
 
-echo "============================= INSTALL GITUI ============================="
-cargo install gitui
-
 echo "============================= INSTALL DOCKER ============================="
 # Install docker (Lasted Version)
 sudo apt update
@@ -110,8 +107,6 @@ sh ./font-config.sh
 sh ./snap.sh
 # Install Fish Shell
 sh ./terminal.sh
-# Install and config VIM
-sh ./vim.sh
 
 # Copy configuration
 sh ./copy-config.sh
