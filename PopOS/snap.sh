@@ -13,4 +13,4 @@ sudo snap install telegram-desktop
 echo "============================= INSTALL FLAMESHOT ============================="
 sudo snap install flameshot
 echo "============================= INSTALL SLACK ============================="
-sudo snap install slack
+sudo snap install slack --classic

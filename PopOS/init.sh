@@ -95,10 +95,10 @@ sudo apt install apt-transport-https
 sudo apt update
 sudo apt install -y code # or code-insiders
 
-sudo flatpak install io.dbeaver.DBeaverCommunity
+#sudo flatpak install io.dbeaver.DBeaverCommunity
 
 # Install tool for dev OPS
-sh ./devops.sh
+# sh ./devops.sh
 # Install programming environment (Java, NodeJs)
 sh ./environment.sh
 # Font Configuration
@@ -121,7 +121,7 @@ wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 
 echo "============================= INSTALL DISCORD =========================="
-wget wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
+wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
 sudo dpkg -i discord.deb
 
 # Install marktext, etcher, kdiff
