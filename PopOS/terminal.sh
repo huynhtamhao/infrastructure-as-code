@@ -27,6 +27,12 @@ sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 chsh -s $(which zsh)
 
+# Colorls
+sudo gem install colorls
+
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 echo "============================= INSTALL NEOVIM ============================="
 # Install neo vim
@@ -46,7 +52,7 @@ pip install howdoi
 # Tool to mau 7 sac cau vong
 sudo snap install lolcat
 # Like postman
-sudo apt install httpie
+sudo apt install -y httpie
 # Huong dan su dung tool
 npm install -g tldr
 # Search google bang comamnd line

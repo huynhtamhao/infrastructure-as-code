@@ -1,8 +1,8 @@
 #!/bin/sh
-# update and upgrade
-sudo apt update
-sudo apt upgrade -y
-sudo apt autoremove -y
+pip3 -V
+brew -v
+node -v 
+npm -v
 
 echo "============================= INSTALL PAPARIUS ICON ============================="
 # Install Paparius Icon

@@ -1,6 +1,6 @@
 # README
 
-## Before run script install
+## Run install.sh Before run script init.sh
 
 ### Install Common some tools
 
