@@ -1,7 +1,7 @@
 #!/bin/sh
 pip3 -V
 brew -v
-node -v 
+node -v
 npm -v
 
 echo "============================= INSTALL PAPARIUS ICON ============================="
@@ -15,7 +15,8 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 
 echo "============================= INSTALL COMMON ============================="
-sudo apt-get --purge remove -y libreoffice*
+sudo apt --purge remove -y libreoffice*
+sudo apt --purge remove -y firefox*
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
@@ -98,7 +99,7 @@ sudo apt install -y code # or code-insiders
 #sudo flatpak install io.dbeaver.DBeaverCommunity
 
 # Install tool for dev OPS
-# sh ./devops.sh
+sh ./devops.sh
 # Install programming environment (Java, NodeJs)
 sh ./environment.sh
 # Font Configuration
@@ -115,16 +116,18 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
+chsh -s $(which zsh)
+
 echo "============================= INSTALL GITKRAKEN ============================="
 # Install Git Kraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 
-echo "============================= INSTALL DISCORD =========================="
-wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
-sudo dpkg -i discord.deb
+# echo "============================= INSTALL DISCORD =========================="
+# wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
+# sudo dpkg -i discord.deb
 
-# Install marktext, etcher, kdiff
+# Install marktext, etcher, discord
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
