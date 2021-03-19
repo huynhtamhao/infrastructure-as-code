@@ -123,9 +123,13 @@ echo "============================= INSTALL GITKRAKEN ==========================
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
 sudo dpkg -i gitkraken-amd64.deb
 
-# echo "============================= INSTALL DISCORD =========================="
-# wget -O discord.deb https://discord.com/api/download?platform=linux&format=deb
-# sudo dpkg -i discord.deb
+echo "============================= INSTALL MARKTEXT ============================="
+sudo wget https://github.com/marktext/marktext/releases/latest/download/marktext-x86_64.AppImage $HOME/Documents/Tools/
+sudo chmod a+x $HOME/Documents/Tools/marktext-x86_64.AppImage
+
+echo "============================= INSTALL DISCORD =========================="
+wget -O discord.deb https://discord.com/api/download\?platform\=linux\&amp\;format\=deb
+sudo dpkg -i discord.deb
 
 # Install marktext, etcher, discord
 sudo apt update
