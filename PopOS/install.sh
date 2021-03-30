@@ -31,4 +31,5 @@ sudo apt-add-repository https://cli.github.com/packages
 sudo apt install gh
 
 mkdir -p $HOME/Documents/Tools
-#gh auth login
+
+gh auth login
