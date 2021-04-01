@@ -15,7 +15,7 @@ test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>
 echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
 
 # Install pip3
-sudo apt install python3-pip
+sudo apt install -y python3-pip
 
 # Install NodeJs
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
@@ -23,13 +23,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-sudo apt install ruby ruby-dev ruby-colorize
-
-# Install Github plugin
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository https://cli.github.com/packages
-sudo apt install gh
+sudo apt install -y ruby ruby-dev ruby-colorize
 
 mkdir -p $HOME/Documents/Tools
-
-gh auth login
