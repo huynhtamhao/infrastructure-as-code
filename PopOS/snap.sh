@@ -1,7 +1,5 @@
 echo "============================= INSTALL SNAP ============================="
 # Install Snap
-sudo apt update
-sudo apt install -y snapd
 echo "============================= INSTALL POSTMAN ============================="
 sudo snap install postman
 echo "============================= INSTALL MOOKOON ============================="

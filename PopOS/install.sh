@@ -25,4 +25,6 @@ export NVM_DIR="$HOME/.nvm"
 
 sudo apt install -y ruby ruby-dev ruby-colorize
 
+sudo apt install -y snapd
+
 mkdir -p $HOME/Documents/Tools
