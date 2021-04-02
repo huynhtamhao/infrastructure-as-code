@@ -26,8 +26,13 @@ echo "============================= INSTALL ZSH =========================="
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+
+curl -fsSL https://starship.rs/install.sh | bash
+
 # Colorls
-sudo gem install colorls
+# sudo gem install colorls
+
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
@@ -36,16 +41,17 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 echo "============================= INSTALL NEOVIM ============================="
 # Install neo vim
 sudo apt install -y neovim
-echo "============================= INSTALL SPACEVIM ============================="
-# Install SpaceVim
-curl -sLf https://spacevim.org/install.sh | bash
-sudo apt-get install exuberant-ctags
+
+# echo "============================= INSTALL SPACEVIM ============================="
+# # Install SpaceVim
+# curl -sLf https://spacevim.org/install.sh | bash
+# sudo apt-get install exuberant-ctags
 
 echo "============================= TERMINAL ARE SEX ============================="
 # Tool download youtube
-pip3 install --user mps-youtube
+# pip3 install --user mps-youtube
 # Tool view docker
-npm install -g dockly
+# npm install -g dockly
 # Tool huong dan coding
 pip install howdoi
 # Tool to mau 7 sac cau vong
@@ -55,7 +61,9 @@ sudo apt install -y httpie
 # Huong dan su dung tool
 npm install -g tldr
 # Search google bang comamnd line
-sudo snap install googler
+# sudo snap install googler
 
 echo "============================= INSTALL GITUI ============================="
 brew install gitui
+
+chsh -s $(which zsh)

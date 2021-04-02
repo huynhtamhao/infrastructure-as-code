@@ -20,16 +20,16 @@ sudo add-apt-repository -y \
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
-echo "============================= INSTALL HUGO ============================="
-brew install hugo
 
 
 echo "============================= INSTALL DOCKER-COMPOSE ============================="
 # Docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
+sudo usermod -aG docker hao
 
-# sudo usermod -aG docker hao
+echo "============================= INSTALL HUGO ============================="
+brew install hugo
 
 sudo apt update
 sudo apt upgrade -y
@@ -49,8 +49,8 @@ sudo tar -xvzf ./openjdk-16_linux-x64_bin.tar.gz
 sudo mv jdk-16 /usr/lib/jvm/
 
 
-echo "============================= INSTALL NODEJS ============================="
-nvm install --lts
+# echo "============================= INSTALL NODEJS ============================="
+# nvm install --lts
 
 sudo apt update
 sudo apt upgrade -y
