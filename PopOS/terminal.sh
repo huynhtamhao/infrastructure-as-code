@@ -1,18 +1,3 @@
-# echo "============================= INSTALL FISH SHELL =========================="
-# sudo apt-add-repository -y ppa:fish-shell/release-3
-# sudo apt update
-# sudo apt install -y fish
-# sudo apt upgrade -y
-# sudo apt autoremove -y
-
-# curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-# curl -fsSL https://starship.rs/install.sh | bash
-# chsh -s `which fish`
-
-# fisher install danhper/fish-ssh-agent
-# fisher install jorgebucaran/nvm.fish
-# nvm install lts
-
 echo "============================= INSTALL KITTY TERMINAL =========================="
 curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
 mkdir -p ~/.local/bin/
@@ -21,6 +6,9 @@ cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applicatio
 sed -i "s|Icon=kitty|Icon=/home/$USER/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty.desktop
 # Set kitty as default terminal
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
+
+gh repo clone dexpota/kitty-themes ~/.config/kitty/kitty-themes
+ln -s ~/.config/kitty/kitty-themes/themes/ayu_mirage.conf ~/.config/kitty/theme.conf
 
 echo "============================= INSTALL ZSH =========================="
 sudo apt install -y zsh
@@ -35,7 +23,6 @@ curl -fsSL https://starship.rs/install.sh | bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
-git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 echo "============================= INSTALL NEOVIM ============================="
@@ -67,3 +54,18 @@ echo "============================= INSTALL GITUI ============================="
 brew install gitui
 
 chsh -s $(which zsh)
+
+# echo "============================= INSTALL FISH SHELL =========================="
+# sudo apt-add-repository -y ppa:fish-shell/release-3
+# sudo apt update
+# sudo apt install -y fish
+# sudo apt upgrade -y
+# sudo apt autoremove -y
+
+# curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+# curl -fsSL https://starship.rs/install.sh | bash
+# chsh -s `which fish`
+
+# fisher install danhper/fish-ssh-agent
+# fisher install jorgebucaran/nvm.fish
+# nvm install lts

@@ -1,14 +1,14 @@
-echo "============================= INSTALL SNAP ============================="
-# Install Snap
-echo "============================= INSTALL POSTMAN ============================="
+echo "============================= INSTALL POSTMAN ====================================="
 sudo snap install postman
-echo "============================= INSTALL MOOKOON ============================="
+echo "============================= INSTALL MOOKOON ====================================="
 sudo snap install mockoon
-echo "============================= INSTALL REMINA ============================="
+echo "============================= INSTALL REMINA ======================================"
 sudo snap install remmina
-echo "============================= INSTALL TELEGRAM ============================="
+echo "============================= INSTALL TELEGRAM ===================================="
 sudo snap install telegram-desktop
-echo "============================= INSTALL FLAMESHOT ============================="
+echo "============================= INSTALL FLAMESHOT ==================================="
 sudo snap install flameshot
-echo "============================= INSTALL SLACK ============================="
+echo "============================= INSTALL SLACK ======================================="
 sudo snap install slack --classic
+echo "============================= HUGO ================================================"
+snap install hugo

@@ -1,8 +1,5 @@
 echo "============================= INSTALL COMMON ============================="
 sudo apt --purge remove -y libreoffice*
-sudo apt update
-sudo apt autoremove -y
-
 sudo apt --purge remove -y firefox*
 sudo apt update
 sudo apt autoremove -y
@@ -16,7 +13,7 @@ sudo apt install -y kdiff3
 sudo apt install -y gnome-tweak-tool
 sudo apt install -y alacarte
 sudo apt install -y unzip
-sudo apt install fortune-mod
+sudo apt install -y fortune-mod
 
 echo "============================= INSTALL PAPARIUS ICON ============================="
 # Install Paparius Icon
@@ -31,4 +28,4 @@ sudo apt-get install -y ibus-bamboo
 ibus restart
 
 sudo apt update
-sudo apt autoremove -y
+sudo apt autoremove

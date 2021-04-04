@@ -1,4 +1,4 @@
-echo "============================= INSTALL DOCKER ============================="
+echo "============================= INSTALL DOCKER ======================================"
 # Install docker (Lasted Version)
 sudo apt update
 sudo apt-get install -y \
@@ -21,21 +21,17 @@ sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 
-
-echo "============================= INSTALL DOCKER-COMPOSE ============================="
+echo "============================= INSTALL DOCKER-COMPOSE =============================="
 # Docker-compose
 sudo curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 sudo usermod -aG docker hao
 
-echo "============================= INSTALL HUGO ============================="
-brew install hugo
-
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
 
-echo "============================= INSTALL JAVA ============================="
+echo "============================= INSTALL JAVA ========================================"
 # Install Java
 # Create folder JDK
 sudo mkdir /usr/lib/jvm
