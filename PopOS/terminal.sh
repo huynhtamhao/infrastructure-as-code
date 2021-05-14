@@ -10,6 +10,9 @@ sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emula
 gh repo clone dexpota/kitty-themes ~/.config/kitty/kitty-themes
 ln -s ~/.config/kitty/kitty-themes/themes/ayu_mirage.conf ~/.config/kitty/theme.conf
 
+# add terminal info for root user
+sudo ln -s $HOME/.local/kitty.app/share/terminfo /root/.terminfo
+
 echo "============================= INSTALL ZSH =========================="
 sudo apt install -y zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -28,6 +31,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 echo "============================= INSTALL NEOVIM ============================="
 # Install neo vim
 sudo apt install -y neovim
+sudo apt-get install fonts-powerline
 
 # echo "============================= INSTALL SPACEVIM ============================="
 # # Install SpaceVim
