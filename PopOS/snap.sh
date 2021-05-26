@@ -11,4 +11,6 @@ sudo snap install flameshot
 echo "============================= INSTALL SLACK ======================================="
 sudo snap install slack --classic
 echo "============================= HUGO ================================================"
-snap install hugo
+sudo snap install hugo
+
+sudo snap install intellij-idea-community --classic
