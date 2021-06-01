@@ -12,5 +12,5 @@ echo "============================= INSTALL SLACK ==============================
 sudo snap install slack --classic
 echo "============================= HUGO ================================================"
 sudo snap install hugo
-
+echo "============================= INTELIJI ================================================"
 sudo snap install intellij-idea-community --classic

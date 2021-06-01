@@ -1,8 +1,8 @@
 #!/bin/sh
-pip3 -V
-brew -v
-node -v
-npm -v
+# pip3 -V
+# brew -v
+# node -v
+# npm -v
 
 # echo "============================= INSTALL BRAVE BROWSER =========================="
 sudo apt install apt-transport-https curl

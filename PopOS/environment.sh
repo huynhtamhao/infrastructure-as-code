@@ -38,21 +38,21 @@ sudo mkdir -p /usr/lib/jvm
 # wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9.1+1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
 # sudo tar -xvzf ./OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
 # sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
-# wget https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_linux-x64_bin.tar.gz
-# sudo tar -xvzf ./openjdk-16.0.1_linux-x64_bin.tar.gz
-# sudo mv jdk-16.0.1 /usr/lib/jvm/openjdk-16
-wget -O https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
-sudo tar -xvzf ./openjdk-11+28_linux-x64_bin.tar.gz
-sudo mv jdk-11 /usr/lib/jvm/jdk-11
+
+wget https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_linux-x64_bin.tar.gz
+sudo tar -xvzf ./openjdk-16.0.1_linux-x64_bin.tar.gz
+sudo mv jdk-16.0.1 /usr/lib/jvm/openjdk-16
+
+# wget -O https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
+# sudo tar -xvzf ./openjdk-11+28_linux-x64_bin.tar.gz
+# sudo mv jdk-11 /usr/lib/jvm/jdk-11
+
 #wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9.1+1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
 #sudo tar -xvzf ./OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
-# wget https://download.java.net/java/GA/jdk16/7863447f0ab643c585b9bdebf67c69db/36/GPL/openjdk-16_linux-x64_bin.tar.gz
-# sudo tar -xvzf ./openjdk-16_linux-x64_bin.tar.gz
-# sudo mv openjdk-16 /usr/lib/jvm/
 
-wget https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_linux-x64_bin.tar.gz
-sudo tar -xvzf ./openjdk-15.0.2_linux-x64_bin.tar.gz
-sudo mv jdk-15.0.2 /usr/lib/jvm/openjdk-15.0.2
+# wget https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_linux-x64_bin.tar.gz
+# sudo tar -xvzf ./openjdk-15.0.2_linux-x64_bin.tar.gz
+# sudo mv jdk-15.0.2 /usr/lib/jvm/openjdk-15.0.2
 
 
 # echo "============================= INSTALL NODEJS ============================="

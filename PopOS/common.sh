@@ -1,6 +1,6 @@
 echo "============================= INSTALL COMMON ============================="
 sudo apt --purge remove -y libreoffice*
-sudo apt --purge remove -y firefox*
+# sudo apt --purge remove -y firefox*
 sudo apt update
 sudo apt autoremove -y
 
