@@ -54,6 +54,9 @@ npm install -g tldr
 # Search google bang comamnd line
 # sudo snap install googler
 
+sudo apt install exa #modern ls
+snap install bashtop
+
 echo "============================= INSTALL GITUI ============================="
 brew install gitui
 
