@@ -10,12 +10,12 @@ sudo apt-get install \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 # Install with lasted version
-sudo apt-get update
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get dockerupdate
+sudo apt-get -y install docker-ce docker-ce-cli containerd.io
 
 echo "============================= INSTALL DOCKER-COMPOSE ============================="
 # Docker-compose
@@ -39,13 +39,16 @@ sudo mkdir -p /usr/lib/jvm
 # sudo tar -xvzf ./OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
 # sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
 
-wget https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_linux-x64_bin.tar.gz
-sudo tar -xvzf ./openjdk-16.0.1_linux-x64_bin.tar.gz
-sudo mv jdk-16.0.1 /usr/lib/jvm/openjdk-16
+# wget https://download.java.net/java/GA/jdk16.0.1/7147401fd7354114ac51ef3e1328291f/9/GPL/openjdk-16.0.1_linux-x64_bin.tar.gz
+# sudo tar -xvzf ./openjdk-16.0.1_linux-x64_bin.tar.gz
+# sudo mv jdk-16.0.1 /usr/lib/jvm/openjdk-16
 
-# wget -O https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
-# sudo tar -xvzf ./openjdk-11+28_linux-x64_bin.tar.gz
-# sudo mv jdk-11 /usr/lib/jvm/jdk-11
+wget https://download.java.net/openjdk/jdk11/ri/openjdk-11+28_linux-x64_bin.tar.gz
+sudo tar -xvzf ./openjdk-11+28_linux-x64_bin.tar.gz
+sudo mv jdk-11 /usr/lib/jvm/jdk-11
+wget https://download.java.net/java/GA/jdk17/0d483333a00540d886896bac774ff48b/35/GPL/openjdk-17_linux-x64_bin.tar.gz
+sudo tar -xvzf ./openjdk-17_linux-x64_bin.tar.gz
+sudo mv jdk-17 /usr/lib/jvm/jdk-17
 
 #wget https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.9.1+1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz
 #sudo tar -xvzf ./OpenJDK11U-jdk_x64_linux_hotspot_11.0.9.1_1.tar.gz && sudo mv jdk-11.0.9.1+1 /usr/lib/jvm/openjdk-11
